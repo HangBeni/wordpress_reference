@@ -1,2 +1,1 @@
-# Melindak Wordpress Repo
-Sablon branch
+## Melindak Wordpress Repo
