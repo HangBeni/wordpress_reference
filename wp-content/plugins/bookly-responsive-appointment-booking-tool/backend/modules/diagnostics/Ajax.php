@@ -87,6 +87,7 @@ class Ajax extends Lib\Base\Ajax
                     break;
                 case 'mailing queue':
                     $ignore[] = 'bookly_mailing_queue';
+                    $ignore[] = 'bookly_notifications_queue';
                     break;
                 case 'payments':
                     $ignore[] = 'bookly_payments';

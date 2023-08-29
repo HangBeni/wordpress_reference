@@ -8,8 +8,8 @@ msgstr ""
 "Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 08:36+0000\n"
-"PO-Revision-Date: 2023-04-26 07:44+0000\n"
+"POT-Creation-Date: 2023-07-31 08:34+0000\n"
+"PO-Revision-Date: 2023-08-04 10:29+0000\n"
 "Last-Translator: support@bookly.info\n"
 "Language-Team: Spanish (Spain)\n"
 "X-Loco-Version: 2.3.1; wp-6.1"
@@ -185,6 +185,9 @@ msgstr "Subtotal"
 
 msgid "Coupon discount"
 msgstr "Descuento de cupones"
+
+msgid "Tips"
+msgstr "Propinas"
 
 msgid "Group discount"
 msgstr "Descuento para grupo"
@@ -1572,6 +1575,9 @@ msgstr "No hay nada seleccionado"
 msgid "Save"
 msgstr "Guardar"
 
+msgid "Incorrect payment data"
+msgstr "Datos de pago incorrectos"
+
 msgid "I will pay now with Credit Card"
 msgstr "Pagaré con tarjeta de crédito"
 
@@ -1589,6 +1595,21 @@ msgstr "Merchant Key"
 
 msgid "Merchant Salt"
 msgstr "Merchant Salt"
+
+msgid "OFF"
+msgstr "APAGADO"
+
+msgid "Time interval of payment gateway"
+msgstr "Intervalo de tiempo de la pasarela de pago"
+
+msgid ""
+"This setting determines the time limit after which the payment made via the "
+"payment gateway is considered to be incomplete. This functionality requires "
+"a scheduled cron job."
+msgstr ""
+"Esta configuración determina el límite de tiempo después del cual el pago "
+"realizado a través de la pasarela de pago se considera incompleto. Esta "
+"funcionalidad requiere un trabajo de cron programado."
 
 msgid "Duration"
 msgstr "Duración"
@@ -1658,9 +1679,6 @@ msgstr "Días Especiales"
 
 msgid "The requested interval is not available"
 msgstr "El intervalo solicitado no está disponible"
-
-msgid "OFF"
-msgstr "APAGADO"
 
 msgid "Compound"
 msgstr "Compuesto"
@@ -1898,8 +1916,22 @@ msgstr "Error de conexión de Zoom"
 msgid "Zoom: OAuth2.0 connection needed"
 msgstr "Zoom: se necesita conexión OAuth2.0"
 
-msgid "You don't have permissions to view this content."
-msgstr "No tienes permisos para ver este contenido."
+msgid "Oops!"
+msgstr "Ups!"
+
+msgid ""
+"It seems like you are trying to log in with a user that is not associated "
+"with an existing customer or staff member."
+msgstr ""
+"Parece que está intentando iniciar sesión con un usuario que no está "
+"asociado con un cliente o miembro del personal existente."
+
+msgid ""
+"Please double-check your credentials and ensure that you are using the "
+"correct login information."
+msgstr ""
+"Vuelva a verificar sus credenciales y asegúrese de que está utilizando la "
+"información correcta de inicio de sesión."
 
 msgid ""
 "Your account has been disabled. Contact your website administrator to "
@@ -2031,29 +2063,8 @@ msgstr "Client ID"
 msgid "Secret"
 msgstr "Secreto"
 
-msgid "Invalid session"
-msgstr "Sesión inválida"
-
-msgid "Mollie error."
-msgstr "Error de Mollie."
-
 msgid "I will pay now with Mollie"
 msgstr "Voy a pagar ahora con Mollie"
-
-msgid "Time interval of payment gateway"
-msgstr "Intervalo de tiempo de la pasarela de pago"
-
-msgid ""
-"This setting determines the time limit after which the payment made via the "
-"payment gateway is considered to be incomplete. This functionality requires "
-"a scheduled cron job."
-msgstr ""
-"Esta configuración determina el límite de tiempo después del cual el pago "
-"realizado a través de la pasarela de pago se considera incompleto. Esta "
-"funcionalidad requiere un trabajo de cron programado."
-
-msgid "Payment failed"
-msgstr "Pago fallido"
 
 msgid "Persons"
 msgstr "Personas"
@@ -2366,6 +2377,16 @@ msgstr "%d min"
 
 msgid "Bookly Cloud couldn't connect to your server."
 msgstr "Bookly Cloud no pudo conectarse a su servidor."
+
+msgid "Please check your firewall settings."
+msgstr "Por favor, compruebe la configuración de su cortafuegos."
+
+#, php-format
+msgid ""
+"If problem persists, please contact us at <a href=\"mailto:%1$s\">%1$s</a>"
+msgstr ""
+"Si el problema persiste, contáctenos a través de <a href=\"mailto:%1$s\">"
+"%1$s</a>"
 
 msgid "Stripe not connected"
 msgstr "Stripe no conectado"
@@ -3606,9 +3627,6 @@ msgstr "No hay actualizaciones disponibles"
 msgid "Free"
 msgstr "Libre"
 
-msgid "Gift card"
-msgstr "Tarjeta de regalo"
-
 msgid "Completed"
 msgstr "Completado"
 
@@ -4144,6 +4162,29 @@ msgstr "Descripción de ICS para clientes"
 
 msgid "ICS description for staff"
 msgstr "Descripción de ICS para el personal"
+
+msgid "The value returned by {appointment_end_date} placeholder"
+msgstr "El valor indicado por el marcador de posición {appointment_end_date}"
+
+msgid ""
+"Choose 'Accurate date' if you want the {appointment_end_date} placeholder to "
+"return the exact end date of the appointment. Select '+1 day' if you prefer "
+"the placeholder to include an additional day in the end date calculation. "
+"Please note that this setting will affect only appointments with a duration "
+"longer or equal to one day."
+msgstr ""
+"Elija 'Fecha precisa' si desea que el marcador de posición "
+"{appointment_end_date} indique la fecha exacta de finalización de la cita. "
+"Seleccione '+1 día' si prefiere que el marcador de posición incluya un día "
+"adicional en el cálculo de la fecha de finalización. Tenga en cuenta que "
+"esta configuración afectará solo a las citas con una duración mayor o igual "
+"a un día."
+
+msgid "+1 day"
+msgstr "+1 día"
+
+msgid "Accurate date"
+msgstr "Fecha exacta"
 
 msgid "Show only business days in the calendar"
 msgstr "Mostrar solo los días hábiles en el calendario"
@@ -4804,9 +4845,6 @@ msgstr ""
 msgid "Congrats!"
 msgstr "¡Felicidades!"
 
-msgid "Oops!"
-msgstr "Ups!"
-
 msgid "best offer"
 msgstr "mejor oferta"
 
@@ -5238,6 +5276,9 @@ msgstr "Nombre de la categoría del personal del nombramiento"
 
 msgid "Staff member full name in appointment"
 msgstr "Nombre completo del miembro del personal en la cita"
+
+msgid "Duration of appointment"
+msgstr "Duración de la cita"
 
 msgid "Total quantity of appointments in cart"
 msgstr "Cantidad total de citas en el carrito"
@@ -6074,9 +6115,6 @@ msgstr "No se encuentra el pago."
 msgid "Reason"
 msgstr "Razón"
 
-msgid "Tips"
-msgstr "Propinas"
-
 msgid "order ID"
 msgstr "Solicitar ID"
 
@@ -6137,6 +6175,11 @@ msgstr "Enviar como nuevo"
 msgid "View"
 msgstr "Vista"
 
+msgid "This text can be inserted into notifications with {internal_note} code"
+msgstr ""
+"Este texto se puede insertar en las notificaciones con el código "
+"{internal_note}"
+
 msgid "Please select a provider"
 msgstr "Por favor seleccione un proveedor"
 
@@ -6174,6 +6217,12 @@ msgid "Appointment notes"
 msgstr "Notas de citas"
 
 msgid ""
+"This text can be inserted into notifications with {appointment_notes} code"
+msgstr ""
+"Este texto se puede insertar en las notificaciones con el código "
+"{appointment_notes}"
+
+msgid ""
 "You are going to delete appointment(s). Notifications will be sent in "
 "accordance with your settings."
 msgstr ""
@@ -6206,6 +6255,11 @@ msgstr "En pausa"
 
 msgid "Limit exceeded"
 msgstr "Límite excedido"
+
+msgid "This text can be inserted into notifications with {client_note} code"
+msgstr ""
+"Este texto se puede insertar en las notificaciones con el código "
+"{client_note}"
 
 msgid "Delete customers"
 msgstr "Eliminar clientes"
@@ -7060,6 +7114,21 @@ msgstr ""
 "Cuando seleccione un paquete, también se seleccionarán los servicios "
 "asociados. Al deshabilitar el servicio, deshabilitará el paquete."
 
+msgid "Attach package"
+msgstr "Adjuntar paquete"
+
+msgid "Attach to package"
+msgstr "Adjuntar al paquete"
+
+msgid "Create package"
+msgstr "Crear paquete"
+
+msgid "Select package"
+msgstr "Seleccionar paquete"
+
+msgid "No packages available"
+msgstr "No hay paquetes disponibles"
+
 msgid ""
 "Select service provider to see the packages provided. Or select unassigned "
 "package to see packages with no particular provider."
@@ -7088,9 +7157,6 @@ msgstr "Combinación incorrecta de ubicación y paquete"
 
 msgid "Please select a customer"
 msgstr "Por favor, selecciona un cliente"
-
-msgid "Could not save package in database."
-msgstr "No se pudo guardar el paquete en la base de datos."
 
 msgid ""
 "Selected appointment date exceeds the period when the customer can use a "
@@ -7361,6 +7427,9 @@ msgstr "Aplicado"
 
 msgid "I will pay now with PayPal"
 msgstr "Pagaré con PayPal"
+
+msgid "Gift card"
+msgstr "Tarjeta de regalo"
 
 msgid ""
 "You are not required to pay for the booked services, click Next to complete "
@@ -8514,9 +8583,6 @@ msgstr "Slug"
 msgid "Main color"
 msgstr "Color principal"
 
-msgid "Show Address"
-msgstr "Mostrar dirección"
-
 msgid "Show 'Book more' button"
 msgstr "Mostrar botón 'Reservar más'"
 
@@ -8568,6 +8634,20 @@ msgstr "Servicios de visualización"
 msgid "Display gift cards"
 msgstr "Mostrar tarjetas de regalo"
 
+msgid ""
+"It is important to leave at least one visible field with personal info (Full "
+"name, First name or Last name) and one field with contact info (Email or "
+"Phone), otherwise the booking will be created without required customer "
+"details."
+msgstr ""
+"Es importante dejar al menos un campo visible con información personal "
+"(Nombre completo, Nombre o Apellido) y un campo con información de contacto "
+"(Correo electrónico o Teléfono), de lo contrario, la reserva se creará sin "
+"los datos requeridos del cliente."
+
+msgid "Step content"
+msgstr "Paso de contenido"
+
 msgid "Add new form"
 msgstr "Añadir nuevo formulario"
 
@@ -8596,6 +8676,9 @@ msgstr "Reserva de cita con éxito"
 msgid "Success package booking"
 msgstr "Reserva de paquete con éxito"
 
+msgid "Step settings"
+msgstr "Paso de configuraciones"
+
 msgid "Custom CSS"
 msgstr "CSS personalizado"
 
@@ -8615,6 +8698,12 @@ msgstr ""
 "seleccione 'Copiar shortcode'. Abra la página donde desea añadir el "
 "formulario de reserva en un modo de edición de página y pegue el código "
 "abreviado copiado anteriormente. El formulario se añadirá a la página."
+
+msgid "Main text"
+msgstr "Texto principal"
+
+msgid "Terms & conditions"
+msgstr "Términos y condiciones"
 
 msgid "Service title"
 msgstr "Título del servicio"
@@ -8758,6 +8847,9 @@ msgstr "Fecha de validez de la tarjeta de regalo"
 
 msgid "Gift card expiration date"
 msgstr "Fecha de vencimiento de la tarjeta de regalo"
+
+msgid "Customer notes for gift card"
+msgstr "Notas de cliente para tarjeta de regalo"
 
 msgid "Appearance form name"
 msgstr "Nombre del formulario de apariencia"
@@ -9059,6 +9151,11 @@ msgid ""
 msgstr ""
 "Puedes ingresar una máscara que contenga asteriscos \"*\" para estas "
 "variables y haz clic en Generar."
+
+msgid "This text can be inserted into notifications with {gift_card_note} code"
+msgstr ""
+"Este texto se puede insertar en las notificaciones con el código "
+"{gift_card_note}"
 
 msgid "Select card type"
 msgstr "Seleccionar tipo de tarjeta"
@@ -9364,9 +9461,6 @@ msgstr "Lista de citas"
 msgid "A custom block for displaying appointments list"
 msgstr "Un bloque personalizado para mostrar la lista de citas"
 
-msgid "Invalid token provided"
-msgstr "Símbolo no válidos proporcionados"
-
 msgid ""
 "Sorry, the time slot %date_time% for %service% has been already occupied."
 msgstr ""
@@ -9550,9 +9644,6 @@ msgstr ""
 
 msgid "Selected period doesn't match service schedule"
 msgstr "El período seleccionado no coincide con el horario del servicio"
-
-msgid "Incorrect payment data"
-msgstr "Datos de pago incorrectos"
 
 msgid "Agent ID"
 msgstr "ID de Agente"
@@ -10306,12 +10397,6 @@ msgstr "ID de la cuenta"
 
 msgid "Merchant ID"
 msgstr "Identificación del comerciante"
-
-msgid "Transaction rejected"
-msgstr "Transacción rechazada"
-
-msgid "Pending payment"
-msgstr "Pago pendiente"
 
 msgid "Edit custom JavaScript"
 msgstr "Editar JavaScript personalizado"

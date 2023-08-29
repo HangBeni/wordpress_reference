@@ -1,13 +1,41 @@
 <?php
 namespace Bookly\Lib;
 
-/**
- * Class Updater
- *
- * @package Bookly
- */
 class Updater extends Base\Updater
 {
+
+    function update_22_2()
+    {
+        add_option( 'bookly_appointment_end_date_method', 'default' );
+    }
+
+    function update_22_0()
+    {
+        if ( ! $this->existsColumn( 'bookly_payments', 'order_id' ) ) {
+            $this->alterTables( array(
+                'bookly_payments' => array(
+                    'ALTER TABLE `%s` ADD `order_id` INT UNSIGNED DEFAULT NULL AFTER `details`',
+                    'ALTER TABLE `%s` ADD FOREIGN KEY (order_id) REFERENCES `' . $this->getTableName( 'bookly_orders' ) . '` (id) ON UPDATE CASCADE ON DELETE SET NULL',
+                ),
+            ) );
+        }
+    }
+
+    function update_21_9()
+    {
+        $this->alterTables( array(
+            'bookly_payments' => array(
+                'ALTER TABLE `%s` ADD `order_id` INT UNSIGNED DEFAULT NULL AFTER `details`',
+                'ALTER TABLE `%s` ADD FOREIGN KEY (order_id) REFERENCES `' . $this->getTableName( 'bookly_orders' ) . '` (id) ON UPDATE CASCADE ON DELETE SET NULL',
+                'UPDATE `%s` SET `type` = \'free\' WHERE `type` = \'cloud_gift\'',
+                'ALTER TABLE `%s` CHANGE `type` `type` ENUM("local", "free", "paypal", "authorize_net", "stripe", "2checkout", "payu_biz", "payu_latam", "payson", "mollie", "woocommerce", "cloud_stripe", "cloud_square") NOT NULL DEFAULT "local"',
+            ),
+            'bookly_notifications_queue' => array(
+                'ALTER TABLE `%s` CHANGE `data` `data` LONGTEXT DEFAULT NULL'
+            ),
+        ) );
+    }
+
     function update_21_8()
     {
         global $wpdb;

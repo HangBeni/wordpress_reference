@@ -3,10 +3,6 @@ namespace Bookly\Lib\DataHolders\Booking;
 
 use Bookly\Lib;
 
-/**
- * Class Simple
- * @package Bookly\Lib\DataHolders\Booking
- */
 class Simple extends Item
 {
     /** @var Lib\Entities\Service */

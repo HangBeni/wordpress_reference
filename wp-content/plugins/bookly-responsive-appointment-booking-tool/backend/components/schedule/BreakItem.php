@@ -40,7 +40,7 @@ class BreakItem extends Lib\Base\Component
     {
         return self::renderTemplate( 'break', array(
             'id'       => $this->id,
-            'interval' => $this->getFormatedInterval(),
+            'interval' => $this->getFormattedInterval(),
         ), $echo );
     }
 
@@ -69,7 +69,7 @@ class BreakItem extends Lib\Base\Component
      *
      * @return string
      */
-    public function getFormatedInterval()
+    public function getFormattedInterval()
     {
         return Lib\Utils\DateTime::formatInterval( $this->start, $this->end );
     }

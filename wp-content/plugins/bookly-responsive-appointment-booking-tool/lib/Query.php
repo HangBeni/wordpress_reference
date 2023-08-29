@@ -1,10 +1,6 @@
 <?php
 namespace Bookly\Lib;
 
-/**
- * Class Query
- * @package Bookly\Lib
- */
 class Query
 {
     // Query type.

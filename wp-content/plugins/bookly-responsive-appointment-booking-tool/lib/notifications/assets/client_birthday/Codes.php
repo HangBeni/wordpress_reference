@@ -4,10 +4,6 @@ namespace Bookly\Lib\Notifications\Assets\ClientBirthday;
 use Bookly\Lib\Entities\Customer;
 use Bookly\Lib\Notifications\Assets\Base;
 
-/**
- * Class Codes
- * @package Bookly\Lib\Notifications\Assets\ClientBirthday
- */
 class Codes extends Base\Codes
 {
     // Core

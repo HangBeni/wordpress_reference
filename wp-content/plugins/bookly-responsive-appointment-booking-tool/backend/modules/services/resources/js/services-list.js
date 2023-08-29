@@ -167,7 +167,7 @@ jQuery(function($) {
      */
     filters.search
         .on('keyup', function() {
-            dt.ajax.reload();
+            dt.ajax.reload(null, false);
         })
         .on('keydown', function(e) {
             if (e.keyCode == 13) {
@@ -178,7 +178,7 @@ jQuery(function($) {
     ;
     filters.category
         .on('change', function() {
-            dt.ajax.reload();
+            dt.ajax.reload(null, false);
         });
 
     /**
@@ -243,7 +243,7 @@ jQuery(function($) {
                 },
                 function(response) {
                     if (response.success) {
-                        dt.ajax.reload();
+                        dt.ajax.reload(null, false);
                         BooklyServiceOrderDialogL10n.services.push({id: response.data.id, title: response.data.title});
                     } else {
                         requiredBooklyPro();

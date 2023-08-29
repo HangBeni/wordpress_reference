@@ -148,6 +148,7 @@ class Page extends Lib\Base\Ajax
                     do_action( 'wpml_register_single_string', 'bookly', 'bookly_l10n_ics_customer_template', self::parameter( 'bookly_l10n_ics_customer_template' ) );
                     update_option( 'bookly_ics_staff_template', self::parameter( 'bookly_ics_staff_template' ) );
                     update_option( 'bookly_appointment_default_status', self::parameter( 'bookly_appointment_default_status' ) );
+                    update_option( 'bookly_appointment_end_date_method', self::parameter( 'bookly_appointment_end_date_method' ) );
                     $alert['success'][] = __( 'Settings saved.', 'bookly' );
                     break;
                 case 'company':  // Company form.

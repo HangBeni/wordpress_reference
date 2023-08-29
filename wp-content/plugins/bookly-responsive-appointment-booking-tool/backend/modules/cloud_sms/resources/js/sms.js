@@ -195,7 +195,7 @@ jQuery(function($) {
         $add_campaign
             .on('click', function() {
                 BooklyCampaignDialog.showDialog(null, function() {
-                    dt.ajax.reload();
+                    dt.ajax.reload(null, false);
                 });
             });
 
@@ -205,7 +205,7 @@ jQuery(function($) {
         $list.on('click', 'button', function() {
             let data = dt.row($(this).closest('td')).data();
             BooklyCampaignDialog.showDialog(data.id, function() {
-                dt.ajax.reload();
+                dt.ajax.reload(null, false);
             })
         });
 
@@ -263,7 +263,7 @@ jQuery(function($) {
          */
         $filter
             .on('keyup', function() {
-                dt.ajax.reload();
+                dt.ajax.reload(null, false);
             })
             .on('keydown', function(e) {
                 if (e.keyCode == 13) {
@@ -304,7 +304,7 @@ jQuery(function($) {
 
         mr.$add_recipients_button.on('click', function() {
             BooklyAddRecipientsDialog.showDialog(ml.list_id, function() {
-                mr.dt.ajax.reload();
+                mr.dt.ajax.reload(null, false);
             });
         });
 
@@ -526,7 +526,7 @@ jQuery(function($) {
          */
         ml.$filter
             .on('keyup', function() {
-                ml.dt.ajax.reload();
+                ml.dt.ajax.reload(null, false);
             })
             .on('keydown', function(e) {
                 if (e.keyCode == 13) {
@@ -536,7 +536,7 @@ jQuery(function($) {
             });
         mr.$filter
             .on('keyup', function() {
-                mr.dt.ajax.reload();
+                mr.dt.ajax.reload(null, false);
             })
             .on('keydown', function(e) {
                 if (e.keyCode == 13) {
@@ -549,7 +549,7 @@ jQuery(function($) {
             if (view === 'mailing_lists') {
                 $mr_container.hide();
                 $ml_container.show();
-                ml.dt.ajax.reload();
+                ml.dt.ajax.reload(null, false);
             } else {
                 $ml_container.hide();
                 if (mr.dt === null) {
@@ -582,7 +582,7 @@ jQuery(function($) {
                         dom: '<\'row\'<\'col-sm-12\'tr>><\'row float-left mt-3\'<\'col-sm-12\'p>>',
                     });
                 } else {
-                    mr.dt.ajax.reload();
+                    mr.dt.ajax.reload(null, false);
                 }
                 $mr_container.show();
             }
@@ -669,10 +669,10 @@ jQuery(function($) {
                 }
             });
             $date_range.on('apply.daterangepicker', function() {
-                dt.ajax.reload();
+                dt.ajax.reload(null, false);
             });
             $(this).on('click', function() {
-                dt.ajax.reload();
+                dt.ajax.reload(null, false);
             });
         }
     });
@@ -829,7 +829,7 @@ jQuery(function($) {
                         $request_sender_id.hide();
                         $sender_id.prop('disabled', true);
                         $cancel_sender_id.show();
-                        dt.ajax.reload();
+                        dt.ajax.reload(null, false);
                     } else {
                         booklyAlert({error: [response.data.message]});
                     }
@@ -854,7 +854,7 @@ jQuery(function($) {
                             $sender_id.prop('disabled', false).val('');
                             $request_sender_id.show();
                             $cancel_sender_id.hide();
-                            dt.ajax.reload();
+                            dt.ajax.reload(null, false);
                         } else {
                             booklyAlert({error: [response.data.message]});
                         }
@@ -877,7 +877,7 @@ jQuery(function($) {
                             $sender_id.prop('disabled', false).val('');
                             $request_sender_id.show();
                             $cancel_sender_id.hide();
-                            dt.ajax.reload();
+                            dt.ajax.reload(null, false);
                         } else {
                             if (response.data && response.data.message) {
                                 booklyAlert({error: [response.data.message]});
@@ -889,7 +889,7 @@ jQuery(function($) {
                 });
             }
         });
-        $(this).on('click', function() { dt.ajax.reload(); });
+        $(this).on('click', function() { dt.ajax.reload(null, false); });
     });
 
     $('#bookly-open-tab-sender-id').on('click', function(e) {

@@ -4,11 +4,6 @@ namespace Bookly\Lib;
 use Bookly\Frontend\Modules\Booking\Proxy as BookingProxy;
 use Bookly\Lib\Proxy\Pro;
 
-/**
- * Class UserBookingData
- *
- * @package Bookly\Lib
- */
 class UserBookingData
 {
     // Protected properties
@@ -779,6 +774,43 @@ class UserBookingData
     }
 
     /**
+     * @param array $customer_data
+     * @return $this
+     */
+    public function setModernFormCustomer( $customer_data )
+    {
+        if ( $this->customer === null ) {
+            // Find or create customer.
+            $this->customer = new Entities\Customer();
+            $customer_data['phone'] = isset( $customer_data['phone_formatted'] ) ? $customer_data['phone_formatted'] : $customer_data['phone'];
+            $customer_fields = array( 'first_name', 'last_name', 'full_name', 'email', 'phone' );
+            $user_id = get_current_user_id();
+            if ( $user_id > 0 ) {
+                // Try to find customer by WP user ID.
+                $this->customer->loadBy( array( 'wp_user_id' => $user_id ) );
+                if ( Config::allowDuplicates() ) {
+                    $fields = array();
+                    foreach ( $customer_fields as $field ) {
+                        if ( $customer_data[ $field ] ) {
+                            $fields['field'] = $customer_data[ $field ];
+                        }
+                    }
+                    $this->customer->loadBy( $fields );
+                } else if ( $customer_data['phone'] && ! $this->customer->loadBy( array( 'phone' => $customer_data['phone'] ) ) ) {
+                    $this->customer->loadBy( array( 'email' => $customer_data['email'] ) );
+                }
+            }
+
+            foreach ( $customer_fields as $field ) {
+                $this->fillData( array( $field => $customer_data[ $field ] ?: '' ) );
+                $this->customer->setFields( array( $field => $customer_data[ $field ] ?: '' ) );
+            }
+        }
+
+        return $this;
+    }
+
+    /**
      * Get coupon.
      *
      * @return \BooklyCoupons\Lib\Entities\Coupon|false
@@ -832,58 +864,26 @@ class UserBookingData
     /**
      * Set payment ( PayPal, 2Checkout, PayU Latam, Mollie ) transaction status.
      *
-     * @param string $gateway
      * @param string $status
-     * @param mixed $data
      * @return $this
-     * @todo use $status as const
      */
-    public function setPaymentStatus( $gateway, $status, $data = null )
+    public function setPaymentStatus( $status )
     {
-        Session::setFormVar( $this->form_id, 'payment', compact( 'gateway', 'status', 'data' ) );
+        Session::setFormVar( $this->form_id, 'payment', compact( 'status' ) );
 
         return $this;
     }
 
     /**
-     * @param string $gateway
-     * @param string $status
-     * @param null $data
-     * @return $this
-     */
-    public function setFailedPaymentStatus( $gateway, $status, $data = null )
-    {
-        $payment = new Entities\Payment();
-        $payment->loadBy( array(
-            'type' => $gateway,
-            'id' => $this->getPaymentId(),
-        ) );
-        if ( $payment->isLoaded() ) {
-            /** @var Entities\CustomerAppointment $ca */
-            foreach ( Entities\CustomerAppointment::query()->where( 'payment_id', $payment->getId() )->find() as $ca ) {
-                $ca->deleteCascade();
-            }
-            $payment->delete();
-        }
-        foreach ( $this->cart->getItems() as $cart_item ) {
-            // Appointment was deleted
-            $cart_item->setAppointmentId( null );
-        }
-
-        return $this->setPaymentStatus( $gateway, $status, $data );
-    }
-
-    /**
      * Get and clear ( PayPal, 2Checkout, PayU Latam, Payson, ... ) transaction status.
      *
-     * @param string $gateway
      * @return array|false
      */
-    public function extractPaymentStatus( $gateway )
+    public function extractPaymentStatus()
     {
         $status = Session::getFormVar( $this->form_id, 'payment' );
 
-        if ( isset( $status['gateway'] ) && ( $gateway === null || $status['gateway'] === $gateway ) ) {
+        if ( isset( $status['status'] ) ) {
             Session::destroyFormVar( $this->form_id, 'payment' );
 
             return $status;

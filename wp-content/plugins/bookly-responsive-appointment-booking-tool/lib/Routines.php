@@ -5,13 +5,9 @@ use Bookly\Lib\Entities\CustomerAppointment;
 use Bookly\Lib\Entities\MailingCampaign;
 use Bookly\Lib\Entities\MailingListRecipient;
 use Bookly\Lib\Entities\MailingQueue;
+use Bookly\Lib\Entities\NotificationQueue;
 use Bookly\Lib\Entities\Payment;
 
-/**
- * Class Routines
- *
- * @package Bookly\Lib
- */
 abstract class Routines
 {
     /**
@@ -72,6 +68,7 @@ abstract class Routines
             self::sendDailyStatistics();
             // Calculate goal by number of customer appointments achieved
             self::calculateGoalOfCA();
+            self::clearNotificationQueue();
             // Let add-ons do their daily routines.
             Proxy\Shared::doDailyRoutine();
         }
@@ -104,7 +101,7 @@ abstract class Routines
         }
 
         // Mark unpaid appointments as rejected.
-        $payments = Proxy\Shared::prepareOutdatedUnpaidPayments( $payments );
+        $payments = \Bookly\Lib\Payment\Proxy\Shared::prepareOutdatedUnpaidPayments( $payments );
         if ( ! empty( $payments ) ) {
             Payment::query()
                 ->update()
@@ -241,6 +238,13 @@ abstract class Routines
 
             update_option( 'bookly_сa_count', $current );
         }
+    }
+
+    protected static function clearNotificationQueue()
+    {
+        NotificationQueue::query()->delete()
+            ->whereRaw( 'created_at < DATE(NOW() - INTERVAL 2 DAY)', array() )
+            ->execute();
     }
 
     public static function mailing()

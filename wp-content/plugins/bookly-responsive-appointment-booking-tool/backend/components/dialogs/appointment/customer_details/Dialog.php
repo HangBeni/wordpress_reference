@@ -5,11 +5,6 @@ use Bookly\Lib;
 use Bookly\Lib\Entities\CustomerAppointment;
 use Bookly\Backend\Components\Dialogs\Appointment\CustomerDetails\Proxy;
 
-/**
- * Class Dialog
- *
- * @package Bookly\Backend\Components\Dialogs\Appointment\CustomerDetails
- */
 class Dialog extends Lib\Base\Component
 {
     /**
@@ -23,6 +18,7 @@ class Dialog extends Lib\Base\Component
 
         self::enqueueData( array(
             'extras_list',
+            'extras_multiply_nop'
         ), 'bookly-customer_details.js' );
 
         $statuses = array();
@@ -42,6 +38,7 @@ class Dialog extends Lib\Base\Component
                 'nop' => __( 'Number of persons', 'bookly' ),
                 'status' => __( 'Status', 'bookly' ),
                 'notes' => __( 'Appointment notes', 'bookly' ),
+                'notes_help' => __( 'This text can be inserted into notifications with {appointment_notes} code', 'bookly' ),
                 'timezone' => __( 'Timezone', 'bookly' ),
                 'apply' => __( 'Apply', 'bookly' ),
                 'cancel' => __( 'Cancel', 'bookly' ),

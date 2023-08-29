@@ -10,10 +10,6 @@ use Bookly\Lib\Entities;
 use Bookly\Lib\Notifications\Assets;
 use Bookly\Lib\Utils;
 
-/**
- * Class Codes
- * @package Bookly\Lib\Notifications\Assets\Test
- */
 class Codes extends Assets\Item\Codes
 {
     public $agenda_date;

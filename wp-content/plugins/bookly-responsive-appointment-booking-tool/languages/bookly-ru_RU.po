@@ -9,8 +9,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 08:34+0000\n"
-"PO-Revision-Date: 2023-04-26 08:02+0000\n"
+"POT-Creation-Date: 2023-07-31 08:01+0000\n"
+"PO-Revision-Date: 2023-08-01 06:28+0000\n"
 "Last-Translator: support@bookly.info\n"
 "Language-Team: Russian\n"
 "X-Loco-Version: 2.3.1; wp-6.1"
@@ -182,6 +182,9 @@ msgstr "Промежуточный итог"
 
 msgid "Coupon discount"
 msgstr "Скидка по купону"
+
+msgid "Tips"
+msgstr "Чаевые"
 
 msgid "Group discount"
 msgstr "Скидка для группы"
@@ -1570,6 +1573,9 @@ msgstr "Ничего не выбрано"
 msgid "Save"
 msgstr "Сохранить"
 
+msgid "Incorrect payment data"
+msgstr "Неверные данные платежа"
+
 msgid "I will pay now with Credit Card"
 msgstr "Я оплачу кредитной картой"
 
@@ -1587,6 +1593,21 @@ msgstr "Merchant Key"
 
 msgid "Merchant Salt"
 msgstr "Merchant Salt"
+
+msgid "OFF"
+msgstr "ВЫКЛЮЧИТЬ"
+
+msgid "Time interval of payment gateway"
+msgstr "Временное окно платёжной системы"
+
+msgid ""
+"This setting determines the time limit after which the payment made via the "
+"payment gateway is considered to be incomplete. This functionality requires "
+"a scheduled cron job."
+msgstr ""
+"Эта настройка определяет время, через которое платёж, осуществляемый через "
+"платёжную систему, будет считаться невыполненненным. Для работы этой "
+"функциональности необходим работающий cron."
 
 msgid "Duration"
 msgstr "Продолжительность"
@@ -1656,9 +1677,6 @@ msgstr "Особые дни"
 
 msgid "The requested interval is not available"
 msgstr "Запрашиваемый интервал недоступен"
-
-msgid "OFF"
-msgstr "ВЫКЛЮЧИТЬ"
 
 msgid "Compound"
 msgstr "Составной"
@@ -1893,8 +1911,22 @@ msgstr "Не удалось подключиться к Zoom"
 msgid "Zoom: OAuth2.0 connection needed"
 msgstr "Zoom: требуется подключение OAuth2.0"
 
-msgid "You don't have permissions to view this content."
-msgstr "У вас нет прав для просмотра этой страницы."
+msgid "Oops!"
+msgstr "Упс!"
+
+msgid ""
+"It seems like you are trying to log in with a user that is not associated "
+"with an existing customer or staff member."
+msgstr ""
+"Похоже, вы пытаетесь войти в систему с пользователем, который не связан с "
+"существующим клиентом или сотрудником."
+
+msgid ""
+"Please double-check your credentials and ensure that you are using the "
+"correct login information."
+msgstr ""
+"Перепроверьте свои учетные данные и убедитесь, что вы используете правильную "
+"информацию для входа."
 
 msgid ""
 "Your account has been disabled. Contact your website administrator to "
@@ -2022,29 +2054,8 @@ msgstr "Client ID"
 msgid "Secret"
 msgstr "Секрет"
 
-msgid "Invalid session"
-msgstr "Недопустимая сессия"
-
-msgid "Mollie error."
-msgstr "Ошибка Mollie."
-
 msgid "I will pay now with Mollie"
 msgstr "Я оплачу через Mollie"
-
-msgid "Time interval of payment gateway"
-msgstr "Временное окно платёжной системы"
-
-msgid ""
-"This setting determines the time limit after which the payment made via the "
-"payment gateway is considered to be incomplete. This functionality requires "
-"a scheduled cron job."
-msgstr ""
-"Эта настройка определяет время, через которое платёж, осуществляемый через "
-"платёжную систему, будет считаться невыполненненным. Для работы этой "
-"функциональности необходим работающий cron."
-
-msgid "Payment failed"
-msgstr "Оплата не удалась"
 
 msgid "Persons"
 msgstr "Персоны"
@@ -2355,6 +2366,16 @@ msgstr "%d мин"
 
 msgid "Bookly Cloud couldn't connect to your server."
 msgstr "Bookly Cloud не удалось подключиться к вашему серверу."
+
+msgid "Please check your firewall settings."
+msgstr "Пожалуйста, проверьте настройки вашего файрвола."
+
+#, php-format
+msgid ""
+"If problem persists, please contact us at <a href=\"mailto:%1$s\">%1$s</a>"
+msgstr ""
+"Если проблема повторится, свяжитесь с нами по адресу <a href=\"mailto:%1$s\">"
+"%1$s</a>"
 
 msgid "Stripe not connected"
 msgstr "Stripe не подключен"
@@ -3593,9 +3614,6 @@ msgstr "Нет доступных обновлений"
 msgid "Free"
 msgstr "Нулевая стоимость"
 
-msgid "Gift card"
-msgstr "Подарочная карта"
-
 msgid "Completed"
 msgstr "Завершён"
 
@@ -4134,6 +4152,28 @@ msgstr "Описание ICS для клиентов"
 
 msgid "ICS description for staff"
 msgstr "Описание ICS для сотрудников"
+
+msgid "The value returned by {appointment_end_date} placeholder"
+msgstr "Значение, возвращаемое кодом {appointment_end_date}"
+
+msgid ""
+"Choose 'Accurate date' if you want the {appointment_end_date} placeholder to "
+"return the exact end date of the appointment. Select '+1 day' if you prefer "
+"the placeholder to include an additional day in the end date calculation. "
+"Please note that this setting will affect only appointments with a duration "
+"longer or equal to one day."
+msgstr ""
+"Выберите 'Точная дата', если вы хотите, чтобы код {appointment_end_date} "
+"возвращал точную дату окончания записи. Выберите '+1 день', если вы "
+"предпочитаете, чтобы этот код включал дополнительный день в расчёт даты "
+"окончания. Обратите внимание, что эта настройка повлияет только на записи, "
+"продолжительность которых больше или равна одному дню."
+
+msgid "+1 day"
+msgstr "+1 день"
+
+msgid "Accurate date"
+msgstr "Точная дата"
 
 msgid "Show only business days in the calendar"
 msgstr "Показывать только рабочие дни в календаре"
@@ -4785,9 +4825,6 @@ msgstr ""
 msgid "Congrats!"
 msgstr "Поздравляем!"
 
-msgid "Oops!"
-msgstr "Упс!"
-
 msgid "best offer"
 msgstr "лучшее предложение"
 
@@ -5215,6 +5252,9 @@ msgstr "Название категории сотрудника в записи
 
 msgid "Staff member full name in appointment"
 msgstr "Имя и фамилия сотрудника в записи"
+
+msgid "Duration of appointment"
+msgstr "Длительность записи"
 
 msgid "Total quantity of appointments in cart"
 msgstr "Общее количество записей в корзине"
@@ -6049,9 +6089,6 @@ msgstr "Платёж не найден"
 msgid "Reason"
 msgstr "Причина"
 
-msgid "Tips"
-msgstr "Чаевые"
-
 msgid "order ID"
 msgstr "ID заказа"
 
@@ -6109,6 +6146,10 @@ msgstr "Отправить как для новых"
 msgid "View"
 msgstr "Просмотреть"
 
+msgid "This text can be inserted into notifications with {internal_note} code"
+msgstr ""
+"Этот текст может быть использован в уведомлениях с кодом {internal_note}"
+
 msgid "Please select a provider"
 msgstr "Пожалуйста, выберите сотрудника"
 
@@ -6144,6 +6185,11 @@ msgid "Appointment notes"
 msgstr "Заметки о встрече"
 
 msgid ""
+"This text can be inserted into notifications with {appointment_notes} code"
+msgstr ""
+"Этот текст может быть использован в уведомлениях с кодом {appointment_notes}"
+
+msgid ""
 "You are going to delete appointment(s). Notifications will be sent in "
 "accordance with your settings."
 msgstr ""
@@ -6176,6 +6222,9 @@ msgstr "Приостановлено"
 
 msgid "Limit exceeded"
 msgstr "Превышен лимит"
+
+msgid "This text can be inserted into notifications with {client_note} code"
+msgstr "Этот текст может быть использован в уведомлениях с кодом {client_note}"
 
 msgid "Delete customers"
 msgstr "Удаление клиентов"
@@ -7032,6 +7081,21 @@ msgstr ""
 "При выборе пакета также будут выбраны связанные сервисы. Отключение сервиса "
 "повлечёт отключение пакета."
 
+msgid "Attach package"
+msgstr "Прикрепить пакет услуг"
+
+msgid "Attach to package"
+msgstr "Прикрепить к пакету услуг"
+
+msgid "Create package"
+msgstr "Создать пакет услуг"
+
+msgid "Select package"
+msgstr "Выберите пакет услуг"
+
+msgid "No packages available"
+msgstr "Нет доступных пакетов услуг"
+
 msgid ""
 "Select service provider to see the packages provided. Or select unassigned "
 "package to see packages with no particular provider."
@@ -7060,9 +7124,6 @@ msgstr "Неверное сочетание местоположения и па
 
 msgid "Please select a customer"
 msgstr "Пожалуйста, выберите клиента"
-
-msgid "Could not save package in database."
-msgstr "Не удалось сохранить пакет услуг в базе данных."
 
 msgid ""
 "Selected appointment date exceeds the period when the customer can use a "
@@ -7330,6 +7391,9 @@ msgstr "Применено"
 
 msgid "I will pay now with PayPal"
 msgstr "Я оплачу через PayPal"
+
+msgid "Gift card"
+msgstr "Подарочная карта"
 
 msgid ""
 "You are not required to pay for the booked services, click Next to complete "
@@ -8464,9 +8528,6 @@ msgstr "Slug"
 msgid "Main color"
 msgstr "Основной цвет"
 
-msgid "Show Address"
-msgstr "Показывать адрес"
-
 msgid "Show 'Book more' button"
 msgstr "Показывать кнопку \"Забронировать ещё\""
 
@@ -8518,6 +8579,19 @@ msgstr "Отображать услуги"
 msgid "Display gift cards"
 msgstr "Отображать подарочные карты"
 
+msgid ""
+"It is important to leave at least one visible field with personal info (Full "
+"name, First name or Last name) and one field with contact info (Email or "
+"Phone), otherwise the booking will be created without required customer "
+"details."
+msgstr ""
+"Важно оставить хотя бы одно видимое поле с личной информацией (Полное имя, "
+"Имя или Фамилия) и одно поле с контактной информацией (Адрес эл. почты или "
+"Телефон), иначе бронирование будет создано без необходимых данных клиента."
+
+msgid "Step content"
+msgstr "Содержимое шага"
+
 msgid "Add new form"
 msgstr "Добавить новую форму"
 
@@ -8546,6 +8620,9 @@ msgstr "Успешное бронирование"
 msgid "Success package booking"
 msgstr "Успешное бронирование пакета"
 
+msgid "Step settings"
+msgstr "Настройки шага"
+
 msgid "Custom CSS"
 msgstr "Пользовательские CSS"
 
@@ -8565,6 +8642,12 @@ msgstr ""
 "\"Копировать шорткод\". Откройте страницу, на которую вы хотите добавить "
 "форму бронирования, в режиме редактирования страницы и вставьте ранее "
 "скопированный шорткод. Форма будет добавлена на страницу."
+
+msgid "Main text"
+msgstr "Основной текст"
+
+msgid "Terms & conditions"
+msgstr "Условия и Положения"
 
 msgid "Service title"
 msgstr "Название сервиса"
@@ -8706,6 +8789,9 @@ msgstr "Подарочная карта действительна с даты"
 
 msgid "Gift card expiration date"
 msgstr "Срок действия подарочной карты"
+
+msgid "Customer notes for gift card"
+msgstr "Примечания клиента к подарочной карте"
 
 msgid "Appearance form name"
 msgstr "Название формы внешнего вида"
@@ -9004,6 +9090,10 @@ msgid ""
 msgstr ""
 "Здесь вы можете ввести маску, содержащую звёздочки «*» для замены на символы,"
 " и нажать Сгенерировать."
+
+msgid "This text can be inserted into notifications with {gift_card_note} code"
+msgstr ""
+"Этот текст может быть использован в уведомлениях с кодом {gift_card_note}"
 
 msgid "Select card type"
 msgstr "Выберите тип карты"
@@ -9311,9 +9401,6 @@ msgstr "Список записей"
 msgid "A custom block for displaying appointments list"
 msgstr "Пользовательский блок для отображения списка записей"
 
-msgid "Invalid token provided"
-msgstr "Предоставлен неверный токен"
-
 msgid ""
 "Sorry, the time slot %date_time% for %service% has been already occupied."
 msgstr "Извините, время %date_time% для %service% уже занято."
@@ -9495,9 +9582,6 @@ msgstr ""
 
 msgid "Selected period doesn't match service schedule"
 msgstr "Выбранный период находится вне рабочего графика услуги"
-
-msgid "Incorrect payment data"
-msgstr "Неверные данные платежа"
 
 msgid "Agent ID"
 msgstr "Agent ID"
@@ -10238,12 +10322,6 @@ msgstr "Account ID"
 
 msgid "Merchant ID"
 msgstr "Merchant ID"
-
-msgid "Transaction rejected"
-msgstr "Транзакция отклонена"
-
-msgid "Pending payment"
-msgstr "Платёж на рассмотрении"
 
 msgid "Edit custom JavaScript"
 msgstr "Редактировать пользовательский JavaScript"

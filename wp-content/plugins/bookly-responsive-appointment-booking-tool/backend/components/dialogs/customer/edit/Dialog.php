@@ -3,10 +3,6 @@ namespace Bookly\Backend\Components\Dialogs\Customer\Edit;
 
 use Bookly\Lib;
 
-/**
- * Class Dialog
- * @package Bookly\Backend\Components\Dialogs\Customer\Edit
- */
 class Dialog extends Lib\Base\Component
 {
     /**
@@ -68,6 +64,7 @@ class Dialog extends Lib\Base\Component
                 'phone' => __( 'Phone', 'bookly' ),
                 'email' => __( 'Email', 'bookly' ),
                 'notes' => __( 'Notes', 'bookly' ),
+                'notes_help' => __( 'This text can be inserted into notifications with {client_note} code', 'bookly' ),
                 'save' => __( 'Save', 'bookly' ),
                 'cancel' => __( 'Cancel', 'bookly' ),
                 'required' => __( 'Required', 'bookly' ),

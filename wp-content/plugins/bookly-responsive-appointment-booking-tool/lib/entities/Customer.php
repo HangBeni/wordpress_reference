@@ -3,11 +3,6 @@ namespace Bookly\Lib\Entities;
 
 use Bookly\Lib;
 
-/**
- * Class Customer
- *
- * @package Bookly\Lib\Entities
- */
 class Customer extends Lib\Base\Entity
 {
     const REMOTE_LIMIT = 100;

@@ -1738,10 +1738,6 @@ label.bookly-square {
         clear: both;
     }
 
-    .bookly-time-step {
-        clear: both;
-    }
-
     .bookly-btn {
         width: auto !important;
         min-width: 0;

@@ -3,11 +3,6 @@ namespace Bookly\Backend\Modules\CloudSms;
 
 use Bookly\Lib;
 
-/**
- * Class Ajax
- *
- * @package Bookly\Backend\Modules\CloudSms
- */
 class Ajax extends Lib\Base\Ajax
 {
     /**
@@ -279,7 +274,7 @@ class Ajax extends Lib\Base\Ajax
             }
             if ( ! empty( $search_columns ) ) {
                 $query->whereRaw( implode( ' OR ', $search_columns ), array_fill( 0, count( $search_columns ), $wpdb->esc_like( $filter['search'] ) ) );
-                $filtered = Lib\Entities\MailingList::query()->whereRaw( implode( ' OR ', $search_columns ), array_fill( 0, count( $search_columns ), $wpdb->esc_like( $filter['search'] ) ) )->count();
+                $filtered = Lib\Entities\MailingList::query( 'm' )->whereRaw( implode( ' OR ', $search_columns ), array_fill( 0, count( $search_columns ), $wpdb->esc_like( $filter['search'] ) ) )->count();
             }
         }
 

@@ -3,11 +3,6 @@ namespace Bookly\Lib\Base;
 
 use Bookly\Lib;
 
-/**
- * Class Entity
- *
- * @package Bookly\Lib\Base
- */
 abstract class Entity extends Cache
 {
 

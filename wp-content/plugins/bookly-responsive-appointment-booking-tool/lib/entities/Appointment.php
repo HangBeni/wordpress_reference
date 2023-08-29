@@ -3,11 +3,6 @@ namespace Bookly\Lib\Entities;
 
 use Bookly\Lib;
 
-/**
- * Class Appointment
- *
- * @package Bookly\Lib\Entities
- */
 class Appointment extends Lib\Base\Entity
 {
     /** @var int */
@@ -207,6 +202,7 @@ class Appointment extends Lib\Base\Entity
                 ->save();
             Lib\Proxy\Files::attachFiles( $ca_data[ $id ]['custom_fields'], $customer_appointment );
             Lib\Proxy\Pro::createBackendPayment( $ca_data[ $id ], $customer_appointment );
+            Lib\Proxy\Packages::attachPackages( $customer_appointment, $ca_data[ $id ], $this->getStaffId(), $this->getLocationId() );
             $customer_appointment->setJustCreated( true );
             $ca_status_changed[] = $customer_appointment;
         }
@@ -238,6 +234,7 @@ class Appointment extends Lib\Base\Entity
                 ->save();
             Lib\Proxy\Files::attachFiles( $ca_data[ $id ]['custom_fields'], $customer_appointment );
             Lib\Proxy\Pro::createBackendPayment( $ca_data[ $id ], $customer_appointment );
+            Lib\Proxy\Packages::attachPackages( $customer_appointment, $ca_data[ $id ], $this->getStaffId(), $this->getLocationId() );
         }
 
         return $ca_status_changed;

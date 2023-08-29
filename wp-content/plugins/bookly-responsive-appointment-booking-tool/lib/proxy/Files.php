@@ -4,9 +4,6 @@ namespace Bookly\Lib\Proxy;
 use Bookly\Lib;
 
 /**
- * Class Files
- * @package Bookly\Lib\Proxy
- *
  * @method static \stdClass[] getAll() Return all custom fields with type file.
  * @method static array getAllIds() Get ids of custom fields for file.
  * @method static void attachFiles( array $custom_fields, Lib\Entities\CustomerAppointment $ca ) Attach uploaded files to Customer Appointment, and safely REMOVE unnecessary files

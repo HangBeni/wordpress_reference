@@ -4,11 +4,6 @@ namespace Bookly\Lib\Slots;
 use Bookly\Lib\Proxy\Locations as LocationsProxy;
 use Bookly\Lib\Proxy\Pro as ProProxy;
 
-/**
- * Class Generator
- *
- * @package Bookly\Lib\Slots
- */
 class Generator implements \Iterator
 {
     const CONNECTION_CONSECUTIVE = 1;

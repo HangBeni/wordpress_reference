@@ -3,10 +3,6 @@ namespace Bookly\Lib\Entities;
 
 use Bookly\Lib;
 
-/**
- * Class Orders
- * @package Bookly\Lib\Entities
- */
 class Order extends Lib\Base\Entity
 {
     /** @var  string */

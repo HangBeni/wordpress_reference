@@ -4,11 +4,6 @@ namespace Bookly\Lib;
 use Bookly\Lib\Entities\Notification;
 use Bookly\Lib\DataHolders\Notification\Settings;
 
-/**
- * Class Installer
- *
- * @package Bookly
- */
 class Installer extends Base\Installer
 {
     /** @var array */
@@ -449,6 +444,8 @@ class Installer extends Base\Installer
             'bookly_smtp_user' => '',
             'bookly_smtp_password' => '',
             'bookly_smtp_secure' => 'none',
+            // Appointments.
+            'bookly_appointment_end_date_method' => 'default',
         );
     }
 
@@ -807,12 +804,20 @@ class Installer extends Base\Installer
         );
 
         $wpdb->query(
+            'CREATE TABLE IF NOT EXISTS `' . Entities\Order::getTableName() . '` (
+                `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                `token` VARCHAR(255) DEFAULT NULL
+            ) ENGINE = INNODB
+            ' . $charset_collate
+        );
+
+        $wpdb->query(
             'CREATE TABLE IF NOT EXISTS `' . Entities\Payment::getTableName() . '` (
                 `id`           INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 `target`       ENUM("appointments","packages","gift_cards") NOT NULL DEFAULT "appointments",
                 `coupon_id`    INT UNSIGNED DEFAULT NULL,
                 `gift_card_id` INT UNSIGNED DEFAULT NULL,
-                `type`         ENUM("local","free","paypal","authorize_net","stripe","2checkout","payu_biz","payu_latam","payson","mollie","woocommerce","cloud_stripe","cloud_square","cloud_gift") NOT NULL DEFAULT "local",
+                `type`         ENUM("local","free","paypal","authorize_net","stripe","2checkout","payu_biz","payu_latam","payson","mollie","woocommerce","cloud_stripe","cloud_square") NOT NULL DEFAULT "local",
                 `total`        DECIMAL(10,2) NOT NULL DEFAULT 0.00,
                 `tax`          DECIMAL(10,2) NOT NULL DEFAULT 0.00,
                 `paid`         DECIMAL(10,2) NOT NULL DEFAULT 0.00,
@@ -821,17 +826,15 @@ class Installer extends Base\Installer
                 `status`       ENUM("pending","completed","rejected","refunded") NOT NULL DEFAULT "completed",
                 `token`        VARCHAR(255) DEFAULT NULL,
                 `details`      TEXT DEFAULT NULL,
+                `order_id`     INT UNSIGNED DEFAULT NULL,
                 `ref_id`       VARCHAR(255) DEFAULT NULL,
                 `created_at`   DATETIME NOT NULL,
-                `updated_at`   DATETIME NOT NULL
-            ) ENGINE = INNODB
-            ' . $charset_collate
-        );
-
-        $wpdb->query(
-            'CREATE TABLE IF NOT EXISTS `' . Entities\Order::getTableName() . '` (
-                `id`    INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                `token` VARCHAR(255) DEFAULT NULL
+                `updated_at`   DATETIME NOT NULL,
+            CONSTRAINT
+                FOREIGN KEY (order_id)
+                REFERENCES ' . Entities\Order::getTableName() . '(id)
+                ON DELETE SET NULL
+                ON UPDATE CASCADE
             ) ENGINE = INNODB
             ' . $charset_collate
         );
@@ -1050,7 +1053,7 @@ class Installer extends Base\Installer
             'CREATE TABLE IF NOT EXISTS `' . Entities\NotificationQueue::getTableName() . '` (
                 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 `token` VARCHAR(255) NOT NULL,
-                `data` TEXT DEFAULT NULL,
+                `data` LONGTEXT DEFAULT NULL,
                 `sent` TINYINT(1) DEFAULT 0,
                 `created_at` DATETIME NOT NULL
             ) ENGINE = INNODB

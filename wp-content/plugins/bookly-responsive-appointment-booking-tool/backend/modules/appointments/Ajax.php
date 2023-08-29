@@ -227,8 +227,16 @@ class Ajax extends Lib\Base\Ajax
         }
 
         foreach ( $order as $sort_by ) {
-            $query->sortBy( str_replace( '.', '_', $columns[ $sort_by['column'] ]['data'] ) )
-                ->order( $sort_by['dir'] == 'desc' ? Lib\Query::ORDER_DESCENDING : Lib\Query::ORDER_ASCENDING );
+            $column = str_replace( '.', '_', $columns[ $sort_by['column'] ]['data'] );
+            if ( $column === 'no' ) {
+                if ( Lib\Config::groupBookingActive() ) {
+                    $query->sortBy( 'id' )
+                        ->order( $sort_by['dir'] === 'desc' ? Lib\Query::ORDER_DESCENDING : Lib\Query::ORDER_ASCENDING );
+                }
+                $column = 'ca_id';
+            }
+            $query->sortBy( $column )
+                ->order( $sort_by['dir'] === 'desc' ? Lib\Query::ORDER_DESCENDING : Lib\Query::ORDER_ASCENDING );
         }
 
         $custom_fields = array();

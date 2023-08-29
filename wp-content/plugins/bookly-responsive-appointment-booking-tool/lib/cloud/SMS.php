@@ -3,10 +3,6 @@ namespace Bookly\Lib\Cloud;
 
 use Bookly\Lib\Utils;
 
-/**
- * Class SMS
- * @package Bookly\Lib\Cloud
- */
 class SMS extends Base
 {
     const CANCEL_SENDER_ID    = '/1.0/users/%token%/sender-ids/cancel'; //GET

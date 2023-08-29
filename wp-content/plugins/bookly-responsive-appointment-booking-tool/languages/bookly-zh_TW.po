@@ -8,8 +8,8 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 08:39+0000\n"
-"PO-Revision-Date: 2023-04-24 10:01+0000\n"
+"POT-Creation-Date: 2023-07-31 08:24+0000\n"
+"PO-Revision-Date: 2023-07-31 10:20+0000\n"
 "Last-Translator: Wina H <chillhchill@gmail.com>\n"
 "Language-Team: Chinese (Taiwan)\n"
 "X-Loco-Version: 2.3.1; wp-6.1"
@@ -177,6 +177,9 @@ msgstr "小計"
 
 msgid "Coupon discount"
 msgstr "優惠券折扣"
+
+msgid "Tips"
+msgstr "小費"
 
 msgid "Group discount"
 msgstr "組別折扣"
@@ -1443,6 +1446,9 @@ msgstr "沒有選擇任何東西"
 msgid "Save"
 msgstr "保存"
 
+msgid "Incorrect payment data"
+msgstr "錯誤付款資料"
+
 msgid "I will pay now with Credit Card"
 msgstr "我會現在使用信用卡支付"
 
@@ -1460,6 +1466,18 @@ msgstr "Merchant Key"
 
 msgid "Merchant Salt"
 msgstr "Merchant Salt"
+
+msgid "OFF"
+msgstr "關閉"
+
+msgid "Time interval of payment gateway"
+msgstr "支付方的時間間隔"
+
+msgid ""
+"This setting determines the time limit after which the payment made via the "
+"payment gateway is considered to be incomplete. This functionality requires "
+"a scheduled cron job."
+msgstr "此設置確定了時間限制，在這之後的付款均被視為未完成。此功能需要計劃的cron作業。"
 
 msgid "Duration"
 msgstr "時長"
@@ -1525,9 +1543,6 @@ msgstr "特別日子"
 
 msgid "The requested interval is not available"
 msgstr "要求的時段不可選"
-
-msgid "OFF"
-msgstr "關閉"
 
 msgid "Compound"
 msgstr "複合"
@@ -1754,8 +1769,18 @@ msgstr "Zoom連接中斷"
 msgid "Zoom: OAuth2.0 connection needed"
 msgstr "Zoom：需要OAuth2.0連接"
 
-msgid "You don't have permissions to view this content."
-msgstr "您無權查看此內容。"
+msgid "Oops!"
+msgstr "等等！"
+
+msgid ""
+"It seems like you are trying to log in with a user that is not associated "
+"with an existing customer or staff member."
+msgstr "您似乎正在嘗試使用一個與現有客戶或工作人員無關聯的用戶來登入。"
+
+msgid ""
+"Please double-check your credentials and ensure that you are using the "
+"correct login information."
+msgstr "請仔細檢查您的憑證，並確保您正在使用正確的登入資料。"
 
 msgid ""
 "Your account has been disabled. Contact your website administrator to "
@@ -1873,26 +1898,8 @@ msgstr "客戶ID"
 msgid "Secret"
 msgstr "Secret"
 
-msgid "Invalid session"
-msgstr "時段無效"
-
-msgid "Mollie error."
-msgstr "Mollie錯誤。"
-
 msgid "I will pay now with Mollie"
 msgstr "我會現在使用手機支付"
-
-msgid "Time interval of payment gateway"
-msgstr "支付方的時間間隔"
-
-msgid ""
-"This setting determines the time limit after which the payment made via the "
-"payment gateway is considered to be incomplete. This functionality requires "
-"a scheduled cron job."
-msgstr "此設置確定了時間限制，在這之後的付款均被視為未完成。此功能需要計劃的cron作業。"
-
-msgid "Payment failed"
-msgstr "付款失敗"
 
 msgid "Persons"
 msgstr "人數"
@@ -2179,6 +2186,14 @@ msgstr "%d 分"
 
 msgid "Bookly Cloud couldn't connect to your server."
 msgstr "Bookly雲端無法連接您的伺服器。"
+
+msgid "Please check your firewall settings."
+msgstr "請檢查防火墻設定。"
+
+#, php-format
+msgid ""
+"If problem persists, please contact us at <a href=\"mailto:%1$s\">%1$s</a>"
+msgstr "如果問題仍然存在，請聯繫我們：<a href=\"mailto:%1$s\">%1$s</a>"
 
 msgid "Stripe not connected"
 msgstr "未能連結Stripe"
@@ -3372,9 +3387,6 @@ msgstr "沒有更新"
 msgid "Free"
 msgstr "空閒"
 
-msgid "Gift card"
-msgstr "禮品卡"
-
 msgid "Completed"
 msgstr "已完成"
 
@@ -3853,6 +3865,26 @@ msgstr "客戶ICS描述"
 
 msgid "ICS description for staff"
 msgstr "員工ICS描述"
+
+msgid "The value returned by {appointment_end_date} placeholder"
+msgstr "{appointment_end_date}佔位符返回值"
+
+msgid ""
+"Choose 'Accurate date' if you want the {appointment_end_date} placeholder to "
+"return the exact end date of the appointment. Select '+1 day' if you prefer "
+"the placeholder to include an additional day in the end date calculation. "
+"Please note that this setting will affect only appointments with a duration "
+"longer or equal to one day."
+msgstr ""
+"如果您希望{appointment_end_date}"
+"佔位符來返回預約的確切結束日期，請選擇'準確日期'。如果您希望佔位符在結束日期計算中多加一天，則請選擇'+1 "
+"天'。請注意，此設定將僅影響持續時間超過或等於一天的預約。"
+
+msgid "+1 day"
+msgstr "+1 天"
+
+msgid "Accurate date"
+msgstr "準確日期"
 
 msgid "Show only business days in the calendar"
 msgstr "僅顯示日曆中的工作日"
@@ -4439,9 +4471,6 @@ msgstr "該產品將被立即禁用。要重新啟用該產品，您需要註冊
 msgid "Congrats!"
 msgstr "恭喜！"
 
-msgid "Oops!"
-msgstr "等等！"
-
 msgid "best offer"
 msgstr "最佳優惠"
 
@@ -4812,6 +4841,9 @@ msgstr "預約的員工分類名稱"
 
 msgid "Staff member full name in appointment"
 msgstr "預約員工的全名"
+
+msgid "Duration of appointment"
+msgstr "預約持續時間"
 
 msgid "Total quantity of appointments in cart"
 msgstr "購物車裡預約的總數目"
@@ -5585,9 +5617,6 @@ msgstr "找不到付款"
 msgid "Reason"
 msgstr "原因"
 
-msgid "Tips"
-msgstr "小費"
-
 msgid "order ID"
 msgstr "訂單ID"
 
@@ -5640,6 +5669,9 @@ msgstr "如新發送"
 msgid "View"
 msgstr "查看"
 
+msgid "This text can be inserted into notifications with {internal_note} code"
+msgstr "該文本可通過{internal_note}代碼插入通知中"
+
 msgid "Please select a provider"
 msgstr "請選擇一個供應商"
 
@@ -5675,6 +5707,10 @@ msgid "Appointment notes"
 msgstr "預約備註"
 
 msgid ""
+"This text can be inserted into notifications with {appointment_notes} code"
+msgstr "該文本可通過{appointment_notes}代碼插入通知中"
+
+msgid ""
 "You are going to delete appointment(s). Notifications will be sent in "
 "accordance with your settings."
 msgstr "您將要刪除預約。通知將根據您的設置發送。"
@@ -5705,6 +5741,9 @@ msgstr "已暫停"
 
 msgid "Limit exceeded"
 msgstr "已超過限制"
+
+msgid "This text can be inserted into notifications with {client_note} code"
+msgstr "該文本可通過{client_note}代碼插入通知中"
 
 msgid "Delete customers"
 msgstr "删除客戶"
@@ -6487,6 +6526,21 @@ msgid ""
 "Disabling the service will disable the package."
 msgstr "選擇包裹時，將一併選擇有關聯的服務。禁用該服務將禁用該軟件包。"
 
+msgid "Attach package"
+msgstr "附加包裹"
+
+msgid "Attach to package"
+msgstr "附加到包裹"
+
+msgid "Create package"
+msgstr "創建包裹"
+
+msgid "Select package"
+msgstr "選擇包裹"
+
+msgid "No packages available"
+msgstr "無可用包裹"
+
 msgid ""
 "Select service provider to see the packages provided. Or select unassigned "
 "package to see packages with no particular provider."
@@ -6512,9 +6566,6 @@ msgstr "錯誤的位置和包裹組合"
 
 msgid "Please select a customer"
 msgstr "請選擇客戶"
-
-msgid "Could not save package in database."
-msgstr "無法將軟件包保存在數據庫中。"
 
 msgid ""
 "Selected appointment date exceeds the period when the customer can use a "
@@ -6771,6 +6822,9 @@ msgstr "已應用"
 
 msgid "I will pay now with PayPal"
 msgstr "我會現在使用Paypal支付"
+
+msgid "Gift card"
+msgstr "禮品卡"
 
 msgid ""
 "You are not required to pay for the booked services, click Next to complete "
@@ -7735,9 +7789,6 @@ msgstr "處理後標題"
 msgid "Main color"
 msgstr "主要顏色"
 
-msgid "Show Address"
-msgstr "顯示地址"
-
 msgid "Show 'Book more' button"
 msgstr "顯示\"預定更多\"按鈕"
 
@@ -7789,6 +7840,17 @@ msgstr "展示服務"
 msgid "Display gift cards"
 msgstr "展示禮品卡"
 
+msgid ""
+"It is important to leave at least one visible field with personal info (Full "
+"name, First name or Last name) and one field with contact info (Email or "
+"Phone), otherwise the booking will be created without required customer "
+"details."
+msgstr ""
+"請記得要留下至少一個帶有個人資料（全名、姓氏或名字）的可見字段以及一個帶有聯繫方式（電子郵件地址或電話號碼）的字段，否則預訂的創建將不帶任何必要的客戶詳細資料。"
+
+msgid "Step content"
+msgstr "步驟內容"
+
 msgid "Add new form"
 msgstr "添加新表單"
 
@@ -7815,6 +7877,9 @@ msgstr "成功預約預定"
 msgid "Success package booking"
 msgstr "成功包裹預定"
 
+msgid "Step settings"
+msgstr "步驟設定"
+
 msgid "Custom CSS"
 msgstr "自定義CSS"
 
@@ -7831,6 +7896,12 @@ msgid ""
 "added to the page."
 msgstr ""
 "請選擇您要發佈的表單，點擊菜單按鈕，並選擇\"複製短代碼\"。在頁面編輯模式下，打開要添加預定表單的頁面，並粘貼之前複製的短代碼。該表單將被添加到該頁面中。"
+
+msgid "Main text"
+msgstr "主要文本"
+
+msgid "Terms & conditions"
+msgstr "條款與條件"
 
 msgid "Service title"
 msgstr "服務標題"
@@ -7963,6 +8034,9 @@ msgstr "禮品卡生效日期"
 
 msgid "Gift card expiration date"
 msgstr "禮品卡過期日期"
+
+msgid "Customer notes for gift card"
+msgstr "禮品卡客戶須知"
 
 msgid "Appearance form name"
 msgstr "外觀表單名稱"
@@ -8221,6 +8295,9 @@ msgid ""
 "Generate."
 msgstr "您可以在此處輸入包含星號 \"*\"作為數值的掩碼，然後按進行。"
 
+msgid "This text can be inserted into notifications with {gift_card_note} code"
+msgstr "該文本可通過{gift_card_note}代碼插入通知中"
+
 msgid "Select card type"
 msgstr "選擇卡類型"
 
@@ -8475,9 +8552,6 @@ msgstr "預約名單"
 msgid "A custom block for displaying appointments list"
 msgstr "用於顯示預約列表的自定義塊"
 
-msgid "Invalid token provided"
-msgstr "提供的代幣(Token)無效"
-
 msgid ""
 "Sorry, the time slot %date_time% for %service% has been already occupied."
 msgstr "對不起，％date_time％的％service％已有其他預約。"
@@ -8651,9 +8725,6 @@ msgstr "此設置允許顯示選擇預約時間的步驟，隱藏它並創建沒
 
 msgid "Selected period doesn't match service schedule"
 msgstr "所選時間與服務時間表不符"
-
-msgid "Incorrect payment data"
-msgstr "錯誤付款資料"
 
 msgid "Agent ID"
 msgstr "代理商號"
@@ -9346,12 +9417,6 @@ msgstr "帳戶碼"
 
 msgid "Merchant ID"
 msgstr "商戶編號"
-
-msgid "Transaction rejected"
-msgstr "交易拒絕"
-
-msgid "Pending payment"
-msgstr "待定付款"
 
 msgid "Edit custom JavaScript"
 msgstr "編輯自定義JavaScript"

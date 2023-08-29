@@ -137,7 +137,7 @@ jQuery(function($) {
         BooklyCustomerDialog.showDialog({
             action: 'create',
             onDone: function(event) {
-                dt.ajax.reload();
+                dt.ajax.reload(null, false);
             }
         })
     });
@@ -161,7 +161,7 @@ jQuery(function($) {
                 action: 'load',
                 customerId: getDTRowData(this).id,
                 onDone: function(event) {
-                    dt.ajax.reload();
+                    dt.ajax.reload(null, false);
                 }
             })
         });
@@ -169,7 +169,7 @@ jQuery(function($) {
     /**
      * On filters change.
      */
-    $filter.on('keyup', function() { dt.ajax.reload(); });
+    $filter.on('keyup', function() { dt.ajax.reload(null, false); });
 
     /**
      * Merge list.

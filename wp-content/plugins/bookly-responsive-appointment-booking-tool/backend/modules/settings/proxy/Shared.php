@@ -4,9 +4,6 @@ namespace Bookly\Backend\Modules\Settings\Proxy;
 use Bookly\Lib;
 
 /**
- * Class Shared
- * @package Bookly\Backend\Modules\Settings\Proxy
- *
  * @method static void  enqueueAssets() Enqueue assets for Settings page.
  * @method static array prepareCalendarAppointmentCodes( array $codes, string $participants ) Prepare codes for appointment description displayed in calendar.
  * @method static array prepareCodes( array $codes, string $section )

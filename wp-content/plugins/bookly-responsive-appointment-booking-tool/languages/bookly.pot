@@ -1227,6 +1227,9 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+msgid "Incorrect payment data"
+msgstr ""
+
 msgid "I will pay now with Credit Card"
 msgstr ""
 
@@ -1243,6 +1246,18 @@ msgid "Merchant Key"
 msgstr ""
 
 msgid "Merchant Salt"
+msgstr ""
+
+msgid "OFF"
+msgstr ""
+
+msgid "Time interval of payment gateway"
+msgstr ""
+
+msgid ""
+"This setting determines the time limit after which the payment made via the "
+"payment gateway is considered to be incomplete. This functionality requires "
+"a scheduled cron job."
 msgstr ""
 
 msgid "Duration"
@@ -1307,9 +1322,6 @@ msgid "Special Days"
 msgstr ""
 
 msgid "The requested interval is not available"
-msgstr ""
-
-msgid "OFF"
 msgstr ""
 
 msgid "Compound"
@@ -1537,7 +1549,17 @@ msgstr ""
 msgid "Zoom: OAuth2.0 connection needed"
 msgstr ""
 
-msgid "You don't have permissions to view this content."
+msgid "Oops!"
+msgstr ""
+
+msgid ""
+"It seems like you are trying to log in with a user that is not associated "
+"with an existing customer or staff member."
+msgstr ""
+
+msgid ""
+"Please double-check your credentials and ensure that you are using the "
+"correct login information."
 msgstr ""
 
 msgid ""
@@ -1652,25 +1674,7 @@ msgstr ""
 msgid "Secret"
 msgstr ""
 
-msgid "Invalid session"
-msgstr ""
-
-msgid "Mollie error."
-msgstr ""
-
 msgid "I will pay now with Mollie"
-msgstr ""
-
-msgid "Time interval of payment gateway"
-msgstr ""
-
-msgid ""
-"This setting determines the time limit after which the payment made via the "
-"payment gateway is considered to be incomplete. This functionality requires "
-"a scheduled cron job."
-msgstr ""
-
-msgid "Payment failed"
 msgstr ""
 
 msgid "Persons"
@@ -1951,6 +1955,14 @@ msgid "%d min"
 msgstr ""
 
 msgid "Bookly Cloud couldn't connect to your server."
+msgstr ""
+
+msgid "Please check your firewall settings."
+msgstr ""
+
+#, php-format
+msgid ""
+"If problem persists, please contact us at <a href=\"mailto:%1$s\">%1$s</a>"
 msgstr ""
 
 msgid "Stripe not connected"
@@ -2983,9 +2995,6 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
-msgid "Gift card"
-msgstr ""
-
 msgid "Completed"
 msgstr ""
 
@@ -3456,6 +3465,23 @@ msgid "ICS description for customers"
 msgstr ""
 
 msgid "ICS description for staff"
+msgstr ""
+
+msgid "The value returned by {appointment_end_date} placeholder"
+msgstr ""
+
+msgid ""
+"Choose 'Accurate date' if you want the {appointment_end_date} placeholder to "
+"return the exact end date of the appointment. Select '+1 day' if you prefer "
+"the placeholder to include an additional day in the end date calculation. "
+"Please note that this setting will affect only appointments with a duration "
+"longer or equal to one day."
+msgstr ""
+
+msgid "+1 day"
+msgstr ""
+
+msgid "Accurate date"
 msgstr ""
 
 msgid "Show only business days in the calendar"
@@ -4034,9 +4060,6 @@ msgstr ""
 msgid "Congrats!"
 msgstr ""
 
-msgid "Oops!"
-msgstr ""
-
 msgid "best offer"
 msgstr ""
 
@@ -4397,6 +4420,9 @@ msgid "Staff category name of appointment"
 msgstr ""
 
 msgid "Staff member full name in appointment"
+msgstr ""
+
+msgid "Duration of appointment"
 msgstr ""
 
 msgid "Total quantity of appointments in cart"
@@ -5217,6 +5243,9 @@ msgstr ""
 msgid "View"
 msgstr ""
 
+msgid "This text can be inserted into notifications with {internal_note} code"
+msgstr ""
+
 msgid "Please select a provider"
 msgstr ""
 
@@ -5252,6 +5281,10 @@ msgid "Appointment notes"
 msgstr ""
 
 msgid ""
+"This text can be inserted into notifications with {appointment_notes} code"
+msgstr ""
+
+msgid ""
 "You are going to delete appointment(s). Notifications will be sent in "
 "accordance with your settings."
 msgstr ""
@@ -5281,6 +5314,9 @@ msgid "Paused"
 msgstr ""
 
 msgid "Limit exceeded"
+msgstr ""
+
+msgid "This text can be inserted into notifications with {client_note} code"
 msgstr ""
 
 msgid "Delete customers"
@@ -5987,6 +6023,21 @@ msgid ""
 "Disabling the service will disable the package."
 msgstr ""
 
+msgid "Attach package"
+msgstr ""
+
+msgid "Attach to package"
+msgstr ""
+
+msgid "Create package"
+msgstr ""
+
+msgid "Select package"
+msgstr ""
+
+msgid "No packages available"
+msgstr ""
+
 msgid ""
 "Select service provider to see the packages provided. Or select unassigned "
 "package to see packages with no particular provider."
@@ -6011,9 +6062,6 @@ msgid "Incorrect location and package combination"
 msgstr ""
 
 msgid "Please select a customer"
-msgstr ""
-
-msgid "Could not save package in database."
 msgstr ""
 
 msgid ""
@@ -6204,6 +6252,9 @@ msgid "Applied"
 msgstr ""
 
 msgid "I will pay now with PayPal"
+msgstr ""
+
+msgid "Gift card"
 msgstr ""
 
 msgid ""
@@ -7144,9 +7195,6 @@ msgstr ""
 msgid "Main color"
 msgstr ""
 
-msgid "Show Address"
-msgstr ""
-
 msgid "Show 'Book more' button"
 msgstr ""
 
@@ -7198,6 +7246,16 @@ msgstr ""
 msgid "Display gift cards"
 msgstr ""
 
+msgid ""
+"It is important to leave at least one visible field with personal info (Full "
+"name, First name or Last name) and one field with contact info (Email or "
+"Phone), otherwise the booking will be created without required customer "
+"details."
+msgstr ""
+
+msgid "Step content"
+msgstr ""
+
 msgid "Add new form"
 msgstr ""
 
@@ -7224,6 +7282,9 @@ msgstr ""
 msgid "Success package booking"
 msgstr ""
 
+msgid "Step settings"
+msgstr ""
+
 msgid "Custom CSS"
 msgstr ""
 
@@ -7238,6 +7299,12 @@ msgid ""
 "'Copy shortcode'. Open the page where you want to add the booking form in a "
 "page edit mode and paste the previously copied shortcode. The form will be "
 "added to the page."
+msgstr ""
+
+msgid "Main text"
+msgstr ""
+
+msgid "Terms & conditions"
 msgstr ""
 
 msgid "Service title"
@@ -7370,6 +7437,9 @@ msgid "Gift card valid-from date"
 msgstr ""
 
 msgid "Gift card expiration date"
+msgstr ""
+
+msgid "Customer notes for gift card"
 msgstr ""
 
 msgid "Appearance form name"
@@ -7626,6 +7696,9 @@ msgid ""
 "Generate."
 msgstr ""
 
+msgid "This text can be inserted into notifications with {gift_card_note} code"
+msgstr ""
+
 msgid "Select card type"
 msgstr ""
 
@@ -7873,9 +7946,6 @@ msgstr ""
 msgid "A custom block for displaying appointments list"
 msgstr ""
 
-msgid "Invalid token provided"
-msgstr ""
-
 msgid ""
 "Sorry, the time slot %date_time% for %service% has been already occupied."
 msgstr ""
@@ -8015,9 +8085,6 @@ msgid ""
 msgstr ""
 
 msgid "Selected period doesn't match service schedule"
-msgstr ""
-
-msgid "Incorrect payment data"
 msgstr ""
 
 msgid "Agent ID"
@@ -8657,12 +8724,6 @@ msgid "Account ID"
 msgstr ""
 
 msgid "Merchant ID"
-msgstr ""
-
-msgid "Transaction rejected"
-msgstr ""
-
-msgid "Pending payment"
 msgstr ""
 
 msgid "Edit custom JavaScript"

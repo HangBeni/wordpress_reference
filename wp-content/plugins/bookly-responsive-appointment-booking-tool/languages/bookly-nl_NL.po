@@ -8,8 +8,8 @@ msgstr ""
 "Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-24 08:39+0000\n"
-"PO-Revision-Date: 2023-04-24 12:51+0000\n"
+"POT-Creation-Date: 2023-07-31 10:14+0000\n"
+"PO-Revision-Date: 2023-07-31 10:17+0000\n"
 "Last-Translator: support@bookly.info\n"
 "Language-Team: Dutch\n"
 "X-Loco-Version: 2.3.1; wp-6.1"
@@ -183,6 +183,9 @@ msgstr "Subtotaal"
 
 msgid "Coupon discount"
 msgstr "Kortingsbon"
+
+msgid "Tips"
+msgstr "Fooien"
 
 msgid "Group discount"
 msgstr "Groepskorting"
@@ -1552,6 +1555,9 @@ msgstr "Niets geselecteerd"
 msgid "Save"
 msgstr "Opslaan"
 
+msgid "Incorrect payment data"
+msgstr "Onjuiste betalingsgegevens"
+
 msgid "I will pay now with Credit Card"
 msgstr "Ik betaal nu met creditcard"
 
@@ -1569,6 +1575,21 @@ msgstr " Merchant Key "
 
 msgid "Merchant Salt"
 msgstr "Merchant Salt"
+
+msgid "OFF"
+msgstr "UIT"
+
+msgid "Time interval of payment gateway"
+msgstr "Tijdsinterval van betalingsgateway"
+
+msgid ""
+"This setting determines the time limit after which the payment made via the "
+"payment gateway is considered to be incomplete. This functionality requires "
+"a scheduled cron job."
+msgstr ""
+"Deze instelling bepaald de tijdslimiet waarna de betaling via de "
+"betalingsgateway als onvolledig wordt beschouwd. Deze functionaliteit "
+"vereist een geplande cron taak."
 
 msgid "Duration"
 msgstr "Duur"
@@ -1637,9 +1658,6 @@ msgstr "Speciale Dagen"
 
 msgid "The requested interval is not available"
 msgstr "De gevraagde interval is niet beschikbaar"
-
-msgid "OFF"
-msgstr "UIT"
 
 msgid "Compound"
 msgstr "Samengestelde"
@@ -1882,8 +1900,21 @@ msgstr "Zoom verbinding mislukt"
 msgid "Zoom: OAuth2.0 connection needed"
 msgstr "Zoom: OAuth2.0 verbinding nodig"
 
-msgid "You don't have permissions to view this content."
-msgstr "U heeft geen toestemming om deze inhoud te bekijken."
+msgid "Oops!"
+msgstr "Oeps!"
+
+msgid ""
+"It seems like you are trying to log in with a user that is not associated "
+"with an existing customer or staff member."
+msgstr ""
+"Het lijkt erop dat u probeert in te loggen met een gebruiker die niet is "
+"gekoppeld aan een bestaande klant of medewerker."
+
+msgid ""
+"Please double-check your credentials and ensure that you are using the "
+"correct login information."
+msgstr ""
+"Controleer uw gegevens en zorg ervoor dat u de juiste inloggegevens gebruikt."
 
 msgid ""
 "Your account has been disabled. Contact your website administrator to "
@@ -2012,29 +2043,8 @@ msgstr "Client ID"
 msgid "Secret"
 msgstr "Geheim"
 
-msgid "Invalid session"
-msgstr "Ongeldig sessie"
-
-msgid "Mollie error."
-msgstr "Mollie fout."
-
 msgid "I will pay now with Mollie"
 msgstr "Ik betaal nu met Mollie"
-
-msgid "Time interval of payment gateway"
-msgstr "Tijdsinterval van betalingsgateway"
-
-msgid ""
-"This setting determines the time limit after which the payment made via the "
-"payment gateway is considered to be incomplete. This functionality requires "
-"a scheduled cron job."
-msgstr ""
-"Deze instelling bepaald de tijdslimiet waarna de betaling via de "
-"betalingsgateway als onvolledig wordt beschouwd. Deze functionaliteit "
-"vereist een geplande cron taak."
-
-msgid "Payment failed"
-msgstr "Betaling mislukt"
 
 msgid "Persons"
 msgstr "Personen"
@@ -2345,6 +2355,16 @@ msgstr "%d min"
 
 msgid "Bookly Cloud couldn't connect to your server."
 msgstr "Bookly Cloud kon geen verbinding maken met uw server."
+
+msgid "Please check your firewall settings."
+msgstr "Controleer de instellingen van uw firewall."
+
+#, php-format
+msgid ""
+"If problem persists, please contact us at <a href=\"mailto:%1$s\">%1$s</a>"
+msgstr ""
+"Als het probleem zich blijft voordoen, neem dan contact met ons op <a "
+"href=\"mailto:%1$s\">%1$s</a>"
 
 msgid "Stripe not connected"
 msgstr "Stripe niet verbonden"
@@ -3576,9 +3596,6 @@ msgstr "Geen updates beschikbaar"
 msgid "Free"
 msgstr "Vrij"
 
-msgid "Gift card"
-msgstr "Cadeaubon"
-
 msgid "Completed"
 msgstr "Voltooid"
 
@@ -4115,6 +4132,29 @@ msgstr "ICS-beschrijving voor klanten"
 
 msgid "ICS description for staff"
 msgstr "ICS-beschrijving voor het personeel"
+
+msgid "The value returned by {appointment_end_date} placeholder"
+msgstr ""
+"De waarde die wordt geretourneerd door {appointment_end_date} placeholder"
+
+msgid ""
+"Choose 'Accurate date' if you want the {appointment_end_date} placeholder to "
+"return the exact end date of the appointment. Select '+1 day' if you prefer "
+"the placeholder to include an additional day in the end date calculation. "
+"Please note that this setting will affect only appointments with a duration "
+"longer or equal to one day."
+msgstr ""
+"Kies 'Nauwkeurige datum' als u wilt dat de {appointment_end_date} "
+"placeholder de exacte einddatum van de afspraak weergeeft. Kies '+1 dag' als "
+"u wilt dat de placeholder een extra dag meerekent in de berekening van de "
+"einddatum. Houd er rekening mee dat deze instelling alleen invloed heeft op "
+"afspraken met een duur langer of gelijk aan één dag."
+
+msgid "+1 day"
+msgstr "+1 dag"
+
+msgid "Accurate date"
+msgstr "Nauwkeurige datum"
 
 msgid "Show only business days in the calendar"
 msgstr "Toon alleen werkdagen in de kalender"
@@ -4767,9 +4807,6 @@ msgstr ""
 msgid "Congrats!"
 msgstr "Gefeliciteerd!"
 
-msgid "Oops!"
-msgstr "Oeps!"
-
 msgid "best offer"
 msgstr "beste aanbieding"
 
@@ -5195,6 +5232,9 @@ msgstr "Personeelscategorie naam van afspraak"
 
 msgid "Staff member full name in appointment"
 msgstr "Volledige naam personeelslid in afspraak"
+
+msgid "Duration of appointment"
+msgstr "Duur van de afspraak"
 
 msgid "Total quantity of appointments in cart"
 msgstr "Totaal aantal afspraken in winkelwagen"
@@ -6024,9 +6064,6 @@ msgstr "Betaling niet gevonden."
 msgid "Reason"
 msgstr "Reden"
 
-msgid "Tips"
-msgstr "Fooien"
-
 msgid "order ID"
 msgstr "bestel-id"
 
@@ -6087,6 +6124,9 @@ msgstr "Verstuur als voor nieuw"
 msgid "View"
 msgstr "Bekijken"
 
+msgid "This text can be inserted into notifications with {internal_note} code"
+msgstr "Deze tekst kan worden ingevoegd in meldingen met {internal_note} code"
+
 msgid "Please select a provider"
 msgstr "Selecteer een dienstverlener"
 
@@ -6123,6 +6163,11 @@ msgid "Appointment notes"
 msgstr "Afspraaknotities"
 
 msgid ""
+"This text can be inserted into notifications with {appointment_notes} code"
+msgstr ""
+"Deze tekst kan worden ingevoegd in meldingen met {appointment_notes} code"
+
+msgid ""
 "You are going to delete appointment(s). Notifications will be sent in "
 "accordance with your settings."
 msgstr ""
@@ -6155,6 +6200,9 @@ msgstr "Gepauzeerd"
 
 msgid "Limit exceeded"
 msgstr "Limiet overschreden"
+
+msgid "This text can be inserted into notifications with {client_note} code"
+msgstr "Deze tekst kan worden ingevoegd in meldingen met {client_note} code"
 
 msgid "Delete customers"
 msgstr "Verwijder klanten"
@@ -6998,6 +7046,21 @@ msgstr ""
 "Als u een pakket selecteert, worden ook de bijbehorende diensten "
 "geselecteerd. Als u de dienst uitschakelt, wordt het pakket uitgeschakeld."
 
+msgid "Attach package"
+msgstr "Pakket bijvoegen"
+
+msgid "Attach to package"
+msgstr "Aan verpakking bevestigen"
+
+msgid "Create package"
+msgstr "Pakket maken"
+
+msgid "Select package"
+msgstr "Selecteer pakket"
+
+msgid "No packages available"
+msgstr "Geen pakketten beschikbaar"
+
 msgid ""
 "Select service provider to see the packages provided. Or select unassigned "
 "package to see packages with no particular provider."
@@ -7026,9 +7089,6 @@ msgstr "Incorrecte locatie en pakket combinatie"
 
 msgid "Please select a customer"
 msgstr "Gelieve een klant te selecteren"
-
-msgid "Could not save package in database."
-msgstr "Niet in staat pakket in database te bewaren."
 
 msgid ""
 "Selected appointment date exceeds the period when the customer can use a "
@@ -7295,6 +7355,9 @@ msgstr "Toegepast"
 
 msgid "I will pay now with PayPal"
 msgstr "Ik betaal nu met Paypal"
+
+msgid "Gift card"
+msgstr "Cadeaubon"
 
 msgid ""
 "You are not required to pay for the booked services, click Next to complete "
@@ -8435,9 +8498,6 @@ msgstr "Slug"
 msgid "Main color"
 msgstr "Hoofdkleur"
 
-msgid "Show Address"
-msgstr "Adres Tonen"
-
 msgid "Show 'Book more' button"
 msgstr "Toon 'Boek meer' knop"
 
@@ -8489,6 +8549,20 @@ msgstr "Services weergeven"
 msgid "Display gift cards"
 msgstr "Cadeaubonnen weergeven"
 
+msgid ""
+"It is important to leave at least one visible field with personal info (Full "
+"name, First name or Last name) and one field with contact info (Email or "
+"Phone), otherwise the booking will be created without required customer "
+"details."
+msgstr ""
+"Het is belangrijk om ten minste één zichtbaar veld met persoonlijke "
+"informatie (volledige naam, voornaam of achternaam) en één veld met "
+"contactgegevens (e-mail of telefoon) over te laten, anders wordt de boeking "
+"gemaakt zonder de vereiste klantgegevens."
+
+msgid "Step content"
+msgstr "Stap inhoud"
+
 msgid "Add new form"
 msgstr "Nieuw formulier toevoegen"
 
@@ -8517,6 +8591,9 @@ msgstr "Afspraak boeken gelukt"
 msgid "Success package booking"
 msgstr "Pakket boeken gelukt"
 
+msgid "Step settings"
+msgstr "Stap instellingen"
+
 msgid "Custom CSS"
 msgstr "Aangepaste CSS"
 
@@ -8537,6 +8614,12 @@ msgstr ""
 "boekingsformulier wilt toevoegen in een pagina-bewerkingsmodus en plak de "
 "eerder gekopieerde verkorte code. Het formulier wordt toegevoegd aan de "
 "pagina."
+
+msgid "Main text"
+msgstr "Hoofdtekst"
+
+msgid "Terms & conditions"
+msgstr "Algemene voorwaarden"
 
 msgid "Service title"
 msgstr "Servicetitel"
@@ -8679,6 +8762,9 @@ msgstr "Cadeaubon geldig vanaf datum"
 
 msgid "Gift card expiration date"
 msgstr "Vervaldatum cadeaubon"
+
+msgid "Customer notes for gift card"
+msgstr "Klantnotities voor cadeaubon"
 
 msgid "Appearance form name"
 msgstr "Uiterlijk formulier naam"
@@ -8975,6 +9061,9 @@ msgid ""
 msgstr ""
 "U kunt hier een masker invullen die sterretjes \"*\" bevat voor variabelen "
 "en dan op Genereer klikken."
+
+msgid "This text can be inserted into notifications with {gift_card_note} code"
+msgstr "Deze tekst kan worden ingevoegd in meldingen met {gift_card_note} code"
 
 msgid "Select card type"
 msgstr "Selecteer type kaart"
@@ -9276,9 +9365,6 @@ msgstr "Afsprakenlijst"
 msgid "A custom block for displaying appointments list"
 msgstr "Een aangepast blok voor het weergeven van afsprakenlijst"
 
-msgid "Invalid token provided"
-msgstr "Ongeldige token geleverd"
-
 msgid ""
 "Sorry, the time slot %date_time% for %service% has been already occupied."
 msgstr "Sorry, het tijdsblok %date_time% voor %service% is al bezet."
@@ -9288,9 +9374,9 @@ msgid ""
 "available anymore. Please select another time slot or contact the service "
 "provider"
 msgstr ""
-"De geselecteerde tijd voor service {service_name} op {afspraak_tijd} is niet "
-"meer beschikbaar. Selecteer een ander tijdstip of neem contact op met de "
-"dienstverlener"
+"De geselecteerde tijd voor service {service_name} op {appointment_time} is "
+"niet meer beschikbaar. Selecteer een ander tijdstip of neem contact op met "
+"de dienstverlener"
 
 msgid "This service is no longer provided."
 msgstr "Deze service wordt niet langer geleverd."
@@ -9461,9 +9547,6 @@ msgstr ""
 
 msgid "Selected period doesn't match service schedule"
 msgstr "Geselecteerde periode komt niet overeen planning van dienst"
-
-msgid "Incorrect payment data"
-msgstr "Onjuiste betalingsgegevens"
 
 msgid "Agent ID"
 msgstr "Agent ID"
@@ -10207,12 +10290,6 @@ msgstr "Account ID"
 
 msgid "Merchant ID"
 msgstr "Handelaar ID"
-
-msgid "Transaction rejected"
-msgstr "Transactie afgewezen"
-
-msgid "Pending payment"
-msgstr "In afwachting van betaling"
 
 msgid "Edit custom JavaScript"
 msgstr "Aangepast JavaScript bewerken"

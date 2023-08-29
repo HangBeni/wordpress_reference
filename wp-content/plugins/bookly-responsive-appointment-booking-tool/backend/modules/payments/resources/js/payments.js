@@ -276,7 +276,7 @@ jQuery(function($) {
             BooklyPaymentDetailsDialog.showDialog({
                 payment_id: dt.row($(this).closest('td')).data().id,
                 done: function(event) {
-                    dt.ajax.reload();
+                    dt.ajax.reload(null, false);
                 }
             });
         });
@@ -312,13 +312,13 @@ jQuery(function($) {
         }
     );
 
-    $id_filter.on('keyup', function() { dt.ajax.reload(); });
-    $creationDateFilter.on('apply.daterangepicker', function() { dt.ajax.reload(); });
-    $type_filter.on('change', function() { dt.ajax.reload(); });
-    $customer_filter.on('change', function() { dt.ajax.reload(); });
-    $staff_filter.on('change', function() { dt.ajax.reload(); });
-    $service_filter.on('change', function() { dt.ajax.reload(); });
-    $status_filter.on('change', function() { dt.ajax.reload(); });
+    $id_filter.on('keyup', function() { dt.ajax.reload(null, false); });
+    $creationDateFilter.on('apply.daterangepicker', function() { dt.ajax.reload(null, false); });
+    $type_filter.on('change', function() { dt.ajax.reload(null, false); });
+    $customer_filter.on('change', function() { dt.ajax.reload(null, false); });
+    $staff_filter.on('change', function() { dt.ajax.reload(null, false); });
+    $service_filter.on('change', function() { dt.ajax.reload(null, false); });
+    $status_filter.on('change', function() { dt.ajax.reload(null, false); });
 
     /**
      * Delete payments.
@@ -345,7 +345,7 @@ jQuery(function($) {
                 dataType: 'json',
                 success: function(response) {
                     if (response.success) {
-                        dt.ajax.reload();
+                        dt.ajax.reload(null, false);
                     } else {
                         alert(response.data.message);
                     }

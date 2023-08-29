@@ -218,7 +218,7 @@ jQuery(function ($) {
         }
     })
     ;
-    filters.visibility.on('change', function () {dt.ajax.reload();});
-    filters.archived.on('change', function () {dt.ajax.reload();});
-    filters.category.on('change', function () {dt.ajax.reload();});
+    filters.visibility.on('change', function () {dt.ajax.reload(null, false);});
+    filters.archived.on('change', function () {dt.ajax.reload(null, false);});
+    filters.category.on('change', function () {dt.ajax.reload(null, false);});
 });

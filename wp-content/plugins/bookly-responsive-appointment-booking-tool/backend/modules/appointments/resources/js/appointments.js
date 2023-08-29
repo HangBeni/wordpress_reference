@@ -42,7 +42,7 @@ jQuery(function ($) {
         isMobile = true;
     } catch (e) {}
 
-    $statusFilter.booklyDropdown({onChange: function () { dt.ajax.reload(); }});
+    $statusFilter.booklyDropdown({onChange: function () { dt.ajax.reload(null, false); }});
 
     $('.bookly-js-select').val(null);
 
@@ -331,7 +331,7 @@ jQuery(function ($) {
             null,
             moment(),
             function (event) {
-                dt.ajax.reload();
+                dt.ajax.reload(null, false);
             }
         )
     });
@@ -421,7 +421,7 @@ jQuery(function ($) {
             BooklyPaymentDetailsDialog.showDialog({
                 payment_id: getDTRowData(this).payment_id,
                 done: function (event) {
-                    dt.ajax.reload();
+                    dt.ajax.reload(null, false);
                 }
             });
         })
@@ -433,7 +433,7 @@ jQuery(function ($) {
                 null,
                 null,
                 function (event) {
-                    dt.ajax.reload();
+                    dt.ajax.reload(null, false);
                 }
             )
         });
@@ -627,11 +627,11 @@ jQuery(function ($) {
         return dt.row($el).data();
     }
 
-    $idFilter.on('keyup', function () { dt.ajax.reload(); });
-    $appointmentDateFilter.on('apply.daterangepicker', function () { dt.ajax.reload(); });
-    $creationDateFilter.on('apply.daterangepicker', function () { dt.ajax.reload(); });
-    $staffFilter.on('change', function () { dt.ajax.reload(); });
-    $customerFilter.on('change', function () { dt.ajax.reload(); });
-    $serviceFilter.on('change', function () { dt.ajax.reload(); });
-    $locationFilter.on('change', function () { dt.ajax.reload(); });
+    $idFilter.on('keyup', function () { dt.ajax.reload(null, false); });
+    $appointmentDateFilter.on('apply.daterangepicker', function () { dt.ajax.reload(null, false); });
+    $creationDateFilter.on('apply.daterangepicker', function () { dt.ajax.reload(null, false); });
+    $staffFilter.on('change', function () { dt.ajax.reload(null, false); });
+    $customerFilter.on('change', function () { dt.ajax.reload(null, false); });
+    $serviceFilter.on('change', function () { dt.ajax.reload(null, false); });
+    $locationFilter.on('change', function () { dt.ajax.reload(null, false); });
 });

@@ -4,9 +4,6 @@ namespace Bookly\Lib\Proxy;
 use Bookly\Lib as BooklyLib;
 
 /**
- * Class CustomerInformation
- * @package Bookly\Lib\Proxy
- *
  * @method static void addBooklyMenuItem() Add 'Customer Information' to Bookly menu.
  * @method static \stdClass[] getFields( $exclude = array() ) Get fields.
  * @method static \stdClass[] getFieldsWhichMayHaveData() Get fields which may have data (no Text Content).

@@ -3,11 +3,6 @@ namespace Bookly\Lib\Utils;
 
 use Bookly\Lib;
 
-/**
- * Class Tables
- *
- * @package Bookly\Lib\Utils
- */
 abstract class Tables
 {
     const APPOINTMENTS = 'appointments';

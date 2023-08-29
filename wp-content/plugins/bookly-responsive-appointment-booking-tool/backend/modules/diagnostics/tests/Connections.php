@@ -1,5 +1,4 @@
 <?php
-
 namespace Bookly\Backend\Modules\Diagnostics\Tests;
 
 use Bookly\Lib;
@@ -7,15 +6,10 @@ use Bookly\Lib\API;
 use Bookly\Lib\Cloud\API as CloudAPI;
 use Bookly\Lib\Config;
 
-/**
- * Class Connections
- *
- * @package Bookly\Backend\Modules\Diagnostics\Tests
- */
 class Connections extends Test
 {
     protected $slug = 'check-external-connections';
-    protected $query = 'query';
+    public static $query = 'query';
     public $ignore_csrf = array( 'ajax' );
 
     public function __construct()
@@ -54,7 +48,7 @@ class Connections extends Test
 
         $response = $cloud->sendPostRequest( '/1.0/test/feedback-request', $data );
 
-        if ( ! ( isset( $response['data']['POST']['query'], $response['data']['GET']['query'] ) && $response['data']['POST']['query'] === $this->query && $response['data']['GET']['query'] === $this->query ) ) {
+        if ( ! ( isset( $response['data']['POST']['query'], $response['data']['GET']['query'] ) && $response['data']['POST']['query'] === self::$query && $response['data']['GET']['query'] === self::$query ) ) {
             $this->addError( sprintf( '<b>%s</b><br/>%s', parse_url( CloudAPI::API_URL, PHP_URL_HOST ), __( 'For some reason, your server blocks Bookly Cloud requests. To fix the issue, please ask your hosting provider to whitelist the Bookly Cloud server.', 'bookly' ) ) );
         }
 
@@ -63,6 +57,6 @@ class Connections extends Test
 
     public function ajax()
     {
-        wp_send_json_success( array( 'query' => $this->query ) );
+        wp_send_json_success( array( 'query' => self::$query ) );
     }
 }

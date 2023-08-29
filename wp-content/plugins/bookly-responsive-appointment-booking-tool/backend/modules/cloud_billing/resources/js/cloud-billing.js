@@ -93,7 +93,7 @@ jQuery(function($) {
     });
 
     $date_range.on('apply.daterangepicker', function() {
-        dt.ajax.reload();
+        dt.ajax.reload(null, false);
     });
 
     $datatable.on('click', '[data-action=download-invoice]', function() {

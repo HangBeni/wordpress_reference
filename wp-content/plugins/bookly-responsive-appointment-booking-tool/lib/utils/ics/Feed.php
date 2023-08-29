@@ -7,11 +7,6 @@ use Bookly\Lib\Utils\Common;
 use Bookly\Lib\Entities\CustomerAppointment;
 use Bookly\Lib;
 
-/**
- * Class Feed
- *
- * @package Bookly\Lib\Utils\Ics
- */
 class Feed
 {
     /** @var Event[] */
@@ -67,25 +62,30 @@ class Feed
         $ics = new self();
 
         if ( $userData->load() && $userData->getOrderId() ) {
-            $query = CustomerAppointment::query( 'ca' )
-                ->select( 'ca.id as ca_id, COALESCE(ca.compound_service_id,ca.collaborative_service_id,a.service_id) AS service_id, a.custom_service_name, a.location_id, s.title AS service_title, a.start_date, a.end_date, st.full_name AS staff_name' )
-                ->where( 'ca.order_id', $userData->getOrderId() )
+            $records = CustomerAppointment::query( 'ca' )
+                ->select( 's.id AS service_id, MIN(a.start_date) AS start_date, MAX(a.end_date) AS end_date, a.custom_service_name, a.location_id, s.title AS service_title, ca.id as ca_id' )
                 ->leftJoin( 'Appointment', 'a', 'a.id = ca.appointment_id' )
-                ->leftJoin( 'Service', 's', 's.id = COALESCE(ca.compound_service_id,ca.collaborative_service_id,a.service_id)' )
-                ->leftJoin( 'Staff', 'st', 'st.id = a.staff_id' )
+                ->leftJoin( 'Service', 's', 's.id = COALESCE(ca.compound_service_id, ca.collaborative_service_id, a.service_id)' )
+                ->leftJoin( 'Order', 'o', 'o.id = ca.order_id', '\Bookly\Lib\Entities' )
+                ->where( 'ca.order_id', $userData->getOrderId() )
                 ->groupBy( 'COALESCE(ca.compound_token, ca.collaborative_token, ca.id)' )
-                ->groupBy( 'a.id' );
+                ->fetchArray();
             $description_template = Lib\Utils\Codes::getICSDescriptionTemplate();
-            foreach ( $query->fetchArray() as $appointment ) {
-                $item = Simple::create( CustomerAppointment::find( $appointment['ca_id'] ) );
-                $description_codes = Lib\Utils\Codes::getICSCodes( $item );
-                if ( $appointment['service_id'] === null ) {
-                    $service_name = $appointment['custom_service_name'];
-                } else {
-                    $service_name = Common::getTranslatedString( 'service_' . $appointment['service_id'], $appointment['service_title'] );
-                }
+            foreach ( $records as $appointment ) {
+                if ( $appointment['start_date'] !== null ) {
+                    $item = Simple::create( CustomerAppointment::find( $appointment['ca_id'] ) );
+                    $item->getAppointment()
+                        ->setStartDate( $appointment['start_date'] )
+                        ->setEndDate( $appointment['end_date'] );
+                    $description_codes = Lib\Utils\Codes::getICSCodes( $item );
+                    if ( $appointment['service_id'] === null ) {
+                        $service_name = $appointment['custom_service_name'];
+                    } else {
+                        $service_name = Common::getTranslatedString( 'service_' . $appointment['service_id'], $appointment['service_title'] );
+                    }
 
-                $ics->addEvent( $appointment['start_date'], $appointment['end_date'], $service_name, Lib\Utils\Codes::replace( $description_template, $description_codes, false ), $appointment['location_id'] );
+                    $ics->addEvent( $appointment['start_date'], $appointment['end_date'], $service_name, Lib\Utils\Codes::replace( $description_template, $description_codes, false ), $appointment['location_id'] );
+                }
             }
         }
 

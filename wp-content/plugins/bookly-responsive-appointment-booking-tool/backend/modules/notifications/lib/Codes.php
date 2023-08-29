@@ -36,6 +36,7 @@ class Codes
                 'appointment_time' => array( 'description' => __( 'Time of appointment', 'bookly' ), 'if' => true ),
                 'booking_number' => array( 'description' => __( 'Booking number', 'bookly' ) ),
                 'internal_note' => array( 'description' => __( 'Internal note', 'bookly' ) ),
+                'total_duration' => array( 'description' => __( 'Duration of appointment', 'bookly' ) ),
             ),
             'cart' => array(
                 'cart_info' => array( 'description' => __( 'Cart information', 'bookly' ) ),

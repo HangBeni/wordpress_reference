@@ -1,10 +1,6 @@
 <?php
 namespace Bookly\Lib\Slots;
 
-/**
- * Class RangeCollection
- * @package Bookly\Lib\Slots
- */
 class RangeCollection implements \IteratorAggregate
 {
     /** @var  Range[] */

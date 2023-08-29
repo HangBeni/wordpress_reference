@@ -4,11 +4,6 @@ namespace Bookly\Lib;
 use Bookly\Backend;
 use Bookly\Frontend;
 
-/**
- * Class Plugin
- *
- * @package Bookly\Lib
- */
 abstract class Plugin extends Base\Plugin
 {
     protected static $prefix = 'bookly_';
@@ -27,6 +22,8 @@ abstract class Plugin extends Base\Plugin
      */
     public static function init()
     {
+        include_once 'deprecated.php';
+
         Backend\Modules\Settings\Ajax::init();
 
         // Init ajax.
@@ -87,6 +84,7 @@ abstract class Plugin extends Base\Plugin
         Frontend\Modules\Booking\Ajax::init();
         Frontend\Modules\Booking\Proxy\Invoices::init();
         Frontend\Modules\Cron\Ajax::init();
+        Frontend\Modules\Payment\Ajax::init();
         Frontend\Modules\Stripe\Ajax::init();
         Frontend\Modules\Zapier\Ajax::init();
 
@@ -122,8 +120,6 @@ abstract class Plugin extends Base\Plugin
 
         if ( is_admin() ) {
             Backend\Backend::registerHooks();
-        } else {
-            Frontend\Frontend::registerHooks();
         }
 
         if ( get_option( 'bookly_gen_collect_stats' ) ) {

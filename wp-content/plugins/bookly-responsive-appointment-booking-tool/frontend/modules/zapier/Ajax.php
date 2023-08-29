@@ -4,10 +4,6 @@ namespace Bookly\Frontend\Modules\Zapier;
 use Bookly\Lib;
 use Bookly\Lib\Entities\Customer;
 
-/**
- * Class Ajax
- * @package Bookly\Frontend\Modules\Zapier
- */
 class Ajax extends Lib\Base\Ajax
 {
     /**
@@ -175,7 +171,7 @@ class Ajax extends Lib\Base\Ajax
             $appointment['custom_fields']    = implode( '; ', $custom_fields );
             $appointment['extras']           = implode( '; ', $extras );
 
-            unset( $appointment['extras_multiply_nop'], $appointment['extras_multiply_nop'], $appointment['time_zone'], $appointment['time_zone_offset'], $appointment['online_meeting_provider'], $appointment['online_meeting_id'], $appointment['online_meeting_data'], $appointment['ca_id'], $appointment['order_id'] );
+            unset( $appointment['extras_multiply_nop'], $appointment['time_zone'], $appointment['time_zone_offset'], $appointment['online_meeting_provider'], $appointment['online_meeting_id'], $appointment['online_meeting_data'], $appointment['ca_id'], $appointment['order_id'] );
         }
 
         return $appointments;

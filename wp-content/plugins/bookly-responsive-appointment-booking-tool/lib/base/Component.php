@@ -3,11 +3,6 @@ namespace Bookly\Lib\Base;
 
 use Bookly\Lib;
 
-/**
- * Class Component
- *
- * @package Bookly\Lib\Base
- */
 abstract class Component extends Cache
 {
     /**

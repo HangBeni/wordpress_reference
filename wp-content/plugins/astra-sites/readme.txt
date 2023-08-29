@@ -4,8 +4,8 @@ Donate link: https://wpastra.com/pro/
 Tags: Elementor,Beaver Builder,Templates,Gutenberg,Block Editor,Astra Starter Sites
 Requires at least: 4.4
 Requires PHP: 5.3
-Tested up to: 6.2
-Stable tag: 3.2.6
+Tested up to: 6.3
+Stable tag: 3.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,8 @@ The growing library of 300+ ready-to-use templates that work with all WordPress 
 Create professional designed pixel perfect websites in minutes with the Starter Templates plugin.
 
 This plugin gives you access to 280+ pre-made full website templates and individual pages for your favorite page builder such as Elementor, Beaver Builder and the Block Editor.
+
+[Try it out on a free dummy site](https://bsf.io/starter-templates-demo)
 
 All you need to do is select the demo that suits your needs, import, tweak and go live!
 
@@ -132,6 +134,17 @@ We are open to suggestions and would love to work on topics that our users are l
 8. Free Images by Pixabay right inside the WordPress media popup.
 
 == Changelog ==
+
+v3.4.0 - 11-August-2023
+- New: Added SureCart variation for every eCommerce based template.
+- Fix: Resolved an issue where the import progress percentage would overflow the limit.
+
+v3.3.0 - 02-August-2023
+- New: Added compatibility to FSE based Spectra One theme.
+- Improvement: Added Plugin Name in a few admin notices in order to make it better readable and understandable.
+- Improvement: Improved code to match the WordPress coding standards.
+- Improvement: Optimised the onboarding screens for streamlined experience.
+- Fix: Fixed an issue with the import process sequence to avoid overflow in the progress percent.
 
 v3.2.6 - 16-June-2023
 - Fix: An issue that occurred as a regression from v3.2.4, where CartFlows flows were not being imported.
@@ -558,7 +571,7 @@ v2.2.4 - 04-May-2020
 - Fix: Changed user permissions for a few actions.
 
 v2.2.3 - 29-April-2020
-- Fix: Handled duplicate data being imported due to Imagick image editor.
+- Fix: Handled duplicate data being imported due to Imagick image editor.
 
 v2.2.2 - 22-April-2020
 - Improvement: Added missing slash to the website preview URL.

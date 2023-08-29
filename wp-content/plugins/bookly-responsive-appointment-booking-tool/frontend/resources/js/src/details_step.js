@@ -555,10 +555,10 @@ export default function stepDetails(params) {
                             type: 'POST',
                             data: data
                         }).then(response => {
-                            window.location.href = woocommerce.cart_url;
+                            window.location.href = response.data.target_url;
                         }).catch(response => {
                             ladda.stop();
-                            stepTime({form_id: params.form_id}, opt[params.form_id].errors[response.error]);
+                            stepTime({form_id: params.form_id}, opt[params.form_id].errors[response.data.error]);
                         });
                     } else {
                         stepPayment({form_id: params.form_id});
