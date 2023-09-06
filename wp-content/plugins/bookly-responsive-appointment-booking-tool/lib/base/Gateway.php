@@ -197,7 +197,9 @@ abstract class Gateway
             if ( $payment && $payment->getTarget() === Entities\Payment::TARGET_GIFT_CARDS ) {
                 Payment\Proxy\Pro::completeGiftCard( $payment );
             } else {
-                $order_id = Entities\Order::query()->where( 'token', $this->request->get( 'bookly_order' ) )->fetchVar( 'id' );
+                $order_id = $payment
+                    ? $payment->getOrderId()
+                    : Entities\Order::query()->where( 'token', $this->request->get( 'bookly_order' ) )->fetchVar( 'id' );
                 $order = BooklyLib\DataHolders\Booking\Order::createFromOrderId( $order_id );
 
                 if ( $order ) {

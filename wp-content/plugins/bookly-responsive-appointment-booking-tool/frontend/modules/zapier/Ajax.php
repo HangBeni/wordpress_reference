@@ -242,7 +242,7 @@ class Ajax extends Lib\Base\Ajax
         ->leftJoin( 'Category', 'ct', 'ct.id = s.category_id' )
         ->leftJoin( 'Staff', 'st', 'st.id = a.staff_id' )
         ->leftJoin( 'StaffService', 'ss', 'ss.staff_id = a.staff_id AND ss.service_id = a.service_id' )
-        ->groupBy( 'a.id' )
+        ->groupBy( 'ca.id' )
         ->sortBy( 'updated_at' )
         ->order( 'DESC' );
 
